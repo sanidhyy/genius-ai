@@ -9,6 +9,9 @@ declare global {
 
       // replicate api token
       REPLICATE_API_TOKEN: string;
+
+      // aiven database url
+      DATABASE_URL: string;
     }
   }
 }
