@@ -15,6 +15,9 @@ declare global {
 
       // stripe api secret key
       STRIPE_API_SECRET_KEY: string;
+
+      // app base url
+      NEXT_PUBLIC_APP_URL: string;
     }
   }
 }
