@@ -1,19 +1,11 @@
 "use client";
 
-import {
-  Code,
-  ImageIcon,
-  LayoutDashboard,
-  MessageSquare,
-  Music,
-  Settings,
-  VideoIcon,
-} from "lucide-react";
 import { Montserrat } from "next/font/google";
 import Image from "next/image";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 
+import { ROUTES } from "@/constants";
 import { cn } from "@/lib/utils";
 
 import { FreeCounter } from "./free-counter";
@@ -22,50 +14,6 @@ const montserrat = Montserrat({
   weight: "600",
   subsets: ["latin"],
 });
-
-const routes = [
-  {
-    label: "Dashboard",
-    icon: LayoutDashboard,
-    href: "/dashboard",
-    color: "text-sky-500",
-  },
-  {
-    label: "Conversation",
-    icon: MessageSquare,
-    href: "/conversation",
-    color: "text-violet-500",
-  },
-  {
-    label: "Image Generation",
-    icon: ImageIcon,
-    href: "/image",
-    color: "text-pink-700",
-  },
-  {
-    label: "Video Generation",
-    icon: VideoIcon,
-    href: "/video",
-    color: "text-orange-700",
-  },
-  {
-    label: "Music Generation",
-    icon: Music,
-    href: "/music",
-    color: "text-emerald-700",
-  },
-  {
-    label: "Code Generation",
-    icon: Code,
-    href: "/code",
-    color: "text-green-700",
-  },
-  {
-    label: "Settings",
-    icon: Settings,
-    href: "/settings",
-  },
-];
 
 type SidebarProps = {
   apiLimitCount: number;
@@ -88,7 +36,7 @@ export const Sidebar = ({ apiLimitCount = 0 }: SidebarProps) => {
         </Link>
 
         <div className="space-y-1">
-          {routes.map((route) => (
+          {ROUTES.map((route) => (
             <Link
               href={route.href}
               key={route.href}
