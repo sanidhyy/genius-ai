@@ -3,6 +3,7 @@
 import axios from "axios";
 import { Check, Zap } from "lucide-react";
 import { useState } from "react";
+import { toast } from "sonner";
 
 import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
@@ -31,6 +32,7 @@ export const ProModal = () => {
 
       window.location.href = response.data.url;
     } catch (error: unknown) {
+      toast.error("Something went wrong.");
       console.error("[STRIPE_CLIENT_ERROR]: ", error);
     } finally {
       setIsLoading(false);

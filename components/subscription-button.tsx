@@ -3,6 +3,7 @@
 import axios from "axios";
 import { Zap } from "lucide-react";
 import { useState } from "react";
+import { toast } from "sonner";
 
 import { Button } from "@/components/ui/button";
 
@@ -22,6 +23,7 @@ export const SubscriptionButton = ({
 
       window.location.href = response.data.url;
     } catch (error: unknown) {
+      toast.error("Something went wrong.");
       console.error("[BILLING_ERROR]: ", error);
     } finally {
       setIsLoading(false);
