@@ -17,9 +17,10 @@ const montserrat = Montserrat({
 
 type SidebarProps = {
   apiLimitCount: number;
+  isPro: boolean;
 };
 
-export const Sidebar = ({ apiLimitCount = 0 }: SidebarProps) => {
+export const Sidebar = ({ apiLimitCount = 0, isPro = false }: SidebarProps) => {
   const pathname = usePathname();
 
   return (
@@ -56,7 +57,7 @@ export const Sidebar = ({ apiLimitCount = 0 }: SidebarProps) => {
         </div>
       </div>
 
-      <FreeCounter apiLimitCount={apiLimitCount} />
+      <FreeCounter apiLimitCount={apiLimitCount} isPro={isPro} />
     </div>
   );
 };
