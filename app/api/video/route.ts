@@ -36,7 +36,7 @@ export async function POST(req: NextRequest) {
 
     await increaseApiLimit();
 
-    return NextResponse.json(response);
+    return NextResponse.json(response, { status: 200 });
   } catch (error: unknown) {
     console.error("[VIDEO_ERROR]: ", error);
     return new NextResponse("Internal server error.", { status: 500 });
