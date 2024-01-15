@@ -7,6 +7,7 @@ import Image from "next/image";
 import { useRouter } from "next/navigation";
 import { useState } from "react";
 import { useForm } from "react-hook-form";
+import { toast } from "sonner";
 import * as z from "zod";
 
 import { Empty } from "@/components/empty";
@@ -89,13 +90,14 @@ const ImagePage = () => {
       const urls = response.data.map((image: { url: string }) => image.url);
 
       setImages(urls);
-      form.reset();
     } catch (error: unknown) {
       if (axios.isAxiosError(error) && error?.response?.status === 403)
         proModal.onOpen();
+      else toast.error("Something went wrong.");
 
       console.error(error);
     } finally {
+      form.reset();
       router.refresh();
     }
   };

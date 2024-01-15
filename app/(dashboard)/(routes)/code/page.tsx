@@ -8,6 +8,7 @@ import type { ChatCompletionRequestMessage } from "openai";
 import { useState } from "react";
 import { useForm } from "react-hook-form";
 import ReactMarkdown from "react-markdown";
+import { toast } from "sonner";
 import * as z from "zod";
 
 import { BotAvatar } from "@/components/bot-avatar";
@@ -50,14 +51,14 @@ const CodePage = () => {
       });
 
       setMessages((current) => [...current, userMessage, response.data]);
-
-      form.reset();
     } catch (error: unknown) {
       if (axios.isAxiosError(error) && error?.response?.status === 403)
         proModal.onOpen();
+      else toast.error("Something went wrong.");
 
       console.error(error);
     } finally {
+      form.reset();
       router.refresh();
     }
   };
