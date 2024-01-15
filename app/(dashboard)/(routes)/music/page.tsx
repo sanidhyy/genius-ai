@@ -14,14 +14,14 @@ import { Loader } from "@/components/loader";
 import { Button } from "@/components/ui/button";
 import { Form, FormControl, FormField, FormItem } from "@/components/ui/form";
 import { Input } from "@/components/ui/input";
-import { conversationFormSchema } from "@/schemas";
+import { musicFormSchema } from "@/schemas";
 
 const MusicPage = () => {
   const router = useRouter();
   const [music, setMusic] = useState<string>();
 
-  const form = useForm<z.infer<typeof conversationFormSchema>>({
-    resolver: zodResolver(conversationFormSchema),
+  const form = useForm<z.infer<typeof musicFormSchema>>({
+    resolver: zodResolver(musicFormSchema),
     defaultValues: {
       prompt: "",
     },
@@ -29,7 +29,7 @@ const MusicPage = () => {
 
   const isLoading = form.formState.isSubmitting;
 
-  const onSubmit = async (values: z.infer<typeof conversationFormSchema>) => {
+  const onSubmit = async (values: z.infer<typeof musicFormSchema>) => {
     try {
       setMusic(undefined);
 
