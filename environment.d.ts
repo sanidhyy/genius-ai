@@ -12,6 +12,9 @@ declare global {
 
       // aiven database url
       DATABASE_URL: string;
+
+      // stripe api secret key
+      STRIPE_API_SECRET_KEY: string;
     }
   }
 }
