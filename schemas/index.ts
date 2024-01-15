@@ -25,3 +25,9 @@ export const musicFormSchema = z.object({
     message: "Music prompt is required.",
   }),
 });
+
+export const videoFormSchema = z.object({
+  prompt: z.string().min(1, {
+    message: "Video prompt is required.",
+  }),
+});
