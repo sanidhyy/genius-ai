@@ -14,8 +14,14 @@ export const codeFormSchema = z.object({
 
 export const imageFormSchema = z.object({
   prompt: z.string().min(1, {
-    message: "Image Prompt is required.",
+    message: "Image prompt is required.",
   }),
   amount: z.string().min(1),
   resolution: z.string().min(1),
+});
+
+export const musicFormSchema = z.object({
+  prompt: z.string().min(1, {
+    message: "Music prompt is required.",
+  }),
 });
