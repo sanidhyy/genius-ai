@@ -23,6 +23,7 @@ import {
   SelectTrigger,
   SelectValue,
 } from "@/components/ui/select";
+import { useProModal } from "@/hooks/use-pro-modal";
 import { imageFormSchema } from "@/schemas";
 
 const amountOptions = [
@@ -64,6 +65,7 @@ const resolutionOptions = [
 ];
 
 const ImagePage = () => {
+  const proModal = useProModal();
   const router = useRouter();
   const [images, setImages] = useState<string[]>([]);
 
@@ -89,7 +91,9 @@ const ImagePage = () => {
       setImages(urls);
       form.reset();
     } catch (error: unknown) {
-      // TODO: Open Pro Modal
+      if (axios.isAxiosError(error) && error?.response?.status === 403)
+        proModal.onOpen();
+
       console.error(error);
     } finally {
       router.refresh();

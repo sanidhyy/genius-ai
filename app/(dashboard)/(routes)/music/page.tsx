@@ -14,9 +14,11 @@ import { Loader } from "@/components/loader";
 import { Button } from "@/components/ui/button";
 import { Form, FormControl, FormField, FormItem } from "@/components/ui/form";
 import { Input } from "@/components/ui/input";
+import { useProModal } from "@/hooks/use-pro-modal";
 import { musicFormSchema } from "@/schemas";
 
 const MusicPage = () => {
+  const proModal = useProModal();
   const router = useRouter();
   const [music, setMusic] = useState<string>();
 
@@ -38,7 +40,9 @@ const MusicPage = () => {
       setMusic(response.data.audio);
       form.reset();
     } catch (error: unknown) {
-      // TODO: Open Pro Modal
+      if (axios.isAxiosError(error) && error?.response?.status === 403)
+        proModal.onOpen();
+
       console.error(error);
     } finally {
       router.refresh();
