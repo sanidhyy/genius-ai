@@ -4,6 +4,7 @@ import { Inter } from "next/font/google";
 import type { PropsWithChildren } from "react";
 
 import { ModalProvider } from "@/providers/modal-provider";
+import { ToasterProvider } from "@/providers/toaster-provider";
 
 import "./globals.css";
 
@@ -20,6 +21,7 @@ export default function RootLayout({ children }: PropsWithChildren) {
       <html lang="en">
         <body className={inter.className}>
           <ModalProvider />
+          <ToasterProvider />
           {children}
         </body>
       </html>
