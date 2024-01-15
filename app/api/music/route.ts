@@ -29,7 +29,7 @@ export async function POST(req: NextRequest) {
 
     return NextResponse.json(response);
   } catch (error: unknown) {
-    console.error("[CONVERSATION_ERROR]: ", error);
+    console.error("[MUSIC_ERROR]: ", error);
     return new NextResponse("Internal server error.", { status: 500 });
   }
 }
