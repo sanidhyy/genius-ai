@@ -1,16 +1,13 @@
-import { SignInButton } from "@clerk/nextjs";
-
-import { Button } from "@/components/ui/button";
+import { LandingContent } from "@/components/landing-content";
+import { LandingHero } from "@/components/landing-hero";
+import { LandingNavbar } from "@/components/landing-navbar";
 
 const LandingPage = () => {
   return (
-    <div className="h-full flex flex-col items-center justify-center gap-y-5">
-      <p>Landing Page (unprotected)</p>
-      <div className="">
-        <SignInButton>
-          <Button>Sign in</Button>
-        </SignInButton>
-      </div>
+    <div className="h-full">
+      <LandingNavbar />
+      <LandingHero />
+      <LandingContent />
     </div>
   );
 };
