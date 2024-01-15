@@ -13,8 +13,9 @@ declare global {
       // aiven database url
       DATABASE_URL: string;
 
-      // stripe api secret key
+      // stripe api/webhook secret key
       STRIPE_API_SECRET_KEY: string;
+      STRIPE_WEBHOOK_SECRET: string;
 
       // app base url
       NEXT_PUBLIC_APP_URL: string;
