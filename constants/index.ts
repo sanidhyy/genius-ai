@@ -10,6 +10,36 @@ import {
 
 export const MAX_FREE_COUNTS = 5 as const;
 
+export const TESTIMONIALS = [
+  {
+    name: "Carlos",
+    avatar: "C",
+    title: "Marketing Specialist",
+    description:
+      "This application has significantly boosted our marketing efforts.",
+  },
+  {
+    name: "Emily",
+    avatar: "E",
+    title: "Student",
+    description:
+      "As a student, this app has been a lifesaver for organizing my tasks and schedules.",
+  },
+  {
+    name: "David",
+    avatar: "D",
+    title: "Entrepreneur",
+    description:
+      "The efficiency and reliability of this tool are unparalleled. Highly recommended!",
+  },
+  {
+    name: "Sophia",
+    avatar: "S",
+    title: "Graphic Designer",
+    description: "Incredible features and user-friendly design. Love it!",
+  },
+] as const;
+
 export const TOOLS = [
   {
     label: "Conversation",
