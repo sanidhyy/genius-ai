@@ -33,7 +33,7 @@ export async function POST(req: NextRequest) {
         input: {
           prompt,
         },
-      }
+      },
     );
 
     if (!isPro) await increaseApiLimit();
