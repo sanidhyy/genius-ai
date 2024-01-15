@@ -19,6 +19,9 @@ declare global {
 
       // app base url
       NEXT_PUBLIC_APP_URL: string;
+
+      // crisp website id
+      NEXT_PUBLIC_CRISP_WEBSITE_ID: string;
     }
   }
 }
