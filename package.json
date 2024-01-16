@@ -1,6 +1,6 @@
 {
   "name": "genius-ai",
-  "version": "0.1.0",
+  "version": "1.0.1",
   "private": true,
   "scripts": {
     "dev": "next dev",
@@ -9,6 +9,73 @@
     "lint": "next lint",
     "postinstall": "prisma generate"
   },
+  "author": {
+    "name": "Sanidhya Kumar Verma",
+    "email": "sanidhya.verma12345@gmail.com",
+    "url": "https://github.com/sanidhyy"
+  },
+  "description": "The connected workspace where better, faster work happens.",
+  "keywords": [
+    "reactjs",
+    "nextjs",
+    "netlify",
+    "react",
+    "genius-ai",
+    "artifical-intelligence",
+    "video-generation",
+    "music-generation",
+    "image-generation",
+    "code-generation",
+    "chatgpt",
+    "diffusion",
+    "effusion",
+    "shadcn",
+    "shadcn-ui",
+    "radix-ui",
+    "cn",
+    "clsx",
+    "saas",
+    "aiven",
+    "sonner",
+    "zustand",
+    "zod",
+    "mysql",
+    "sql",
+    "lucide-react",
+    "crisp-chat",
+    "postcss",
+    "prettier",
+    "react-dom",
+    "tailwindcss",
+    "tailwindcss-animate",
+    "ui/ux",
+    "js",
+    "javascript",
+    "typescript",
+    "eslint",
+    "html",
+    "css"
+  ],
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/sanidhyy/genius-ai.git"
+  },
+  "homepage": "https://github.com/sanidhyy/genius-ai#readme",
+  "bugs": {
+    "url": "https://github.com/sanidhyy/genius-ai/issues",
+    "email": "sanidhya.verma12345@gmail.com"
+  },
+  "funding": [
+    {
+      "type": "patreon",
+      "url": "https://www.patreon.com/sanidhy"
+    },
+    {
+      "type": "Buy me a coffee",
+      "url": "https://www.buymeacoffee.com/sanidhy"
+    }
+  ],
   "dependencies": {
     "@clerk/nextjs": "^4.29.3",
     "@hookform/resolvers": "^3.3.4",
