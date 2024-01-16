@@ -43,7 +43,7 @@
 
 Here is the folder structure of this app.
 
-```env
+```bash
 genius-ai/
   |- app/
     |-- (auth)/
