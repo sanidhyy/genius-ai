@@ -1,18 +1,11 @@
 "use client";
 
-import { useAuth } from "@clerk/nextjs";
 import Image from "next/image";
 import Link from "next/link";
 
-import { Button } from "@/components/ui/button";
-import { links } from "@/config";
-import { cn } from "@/lib/utils";
-import { Facebook, Twitter } from "lucide-react";
 import { FOOTER_LINKS } from "@/constants";
 
 export const LandingFooter = () => {
-  const { isSignedIn } = useAuth();
-
   return (
     <nav className="p-8 bg-transparent flex items-center justify-between">
       <Link href="/" className="flex items-center">
