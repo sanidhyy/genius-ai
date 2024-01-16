@@ -1,10 +1,14 @@
 import {
   Code,
+  Facebook,
+  Github,
   ImageIcon,
+  Instagram,
   LayoutDashboard,
   MessageSquare,
   Music,
   Settings,
+  Twitter,
   VideoIcon,
 } from "lucide-react";
 
@@ -93,3 +97,26 @@ export const ROUTES = [
     color: null,
   },
 ] as const;
+
+export const FOOTER_LINKS = [
+  {
+    name: "Facebook",
+    icon: Facebook,
+    link: "https://facebook.com",
+  },
+  {
+    name: "Twitter",
+    icon: Twitter,
+    link: "https://twitter.com",
+  },
+  {
+    name: "Instagram",
+    icon: Instagram,
+    link: "https://instagram.com",
+  },
+  {
+    name: "Github",
+    icon: Github,
+    link: "https://github.com",
+  },
+];
