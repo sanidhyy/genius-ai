@@ -2,6 +2,7 @@
 
 import { TESTIMONIALS } from "@/constants";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
+import Image from "next/image";
 
 export const LandingContent = () => {
   return (
@@ -18,6 +19,15 @@ export const LandingContent = () => {
           >
             <CardHeader>
               <CardTitle className="flex items-center gap-x-2">
+                <div>
+                  <Image
+                    src={testimonial.image}
+                    alt="user"
+                    height={48}
+                    width={48}
+                    className="rounded-full"
+                  />
+                </div>
                 <div>
                   <p className="text-lg">{testimonial.name}</p>
                   <p className="text-zinc-400 text-sm">{testimonial.title}</p>
