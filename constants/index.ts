@@ -127,9 +127,5 @@ export const FOOTER_LINKS = [
     icon: Instagram,
     link: "https://instagram.com",
   },
-  {
-    name: "Github",
-    icon: Github,
-    link: "https://github.com",
-  },
+
 ];
