@@ -10,9 +10,9 @@
     "postinstall": "prisma generate"
   },
   "author": {
-    "name": "Sanidhya Kumar Verma",
-    "email": "sanidhya.verma12345@gmail.com",
-    "url": "https://github.com/sanidhyy"
+    "name": "Leonardo Espinoza",
+    "email": "leonardo.espinoz@live.cl",
+    "url": "https://github.com/leodevzone"
   },
   "description": "The connected workspace where better, faster work happens.",
   "keywords": [
@@ -59,12 +59,12 @@
   "license": "MIT",
   "repository": {
     "type": "git",
-    "url": "https://github.com/sanidhyy/genius-ai.git"
+    "url": "https://github.com/leodevzone/genius-ai.git"
   },
-  "homepage": "https://github.com/sanidhyy/genius-ai#readme",
+  "homepage": "https://github.com/leodevzone/genius-ai#readme",
   "bugs": {
-    "url": "https://github.com/sanidhyy/genius-ai/issues",
-    "email": "sanidhya.verma12345@gmail.com"
+    "url": "https://github.com/leodevzone/genius-ai/issues",
+    "email": "leonardo.espinoz@live.cl"
   },
   "funding": [
     {

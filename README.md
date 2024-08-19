@@ -4,13 +4,13 @@
 
 ![Genius - A Modern Next.js 14 SaaS AI Platform.](/.github/images/img_main.png "Genius - A Modern Next.js 14 SaaS AI Platform.")
 
-[![Ask Me Anything!](https://flat.badgen.net/static/Ask%20me/anything?icon=github&color=black&scale=1.01)](https://github.com/sanidhyy "Ask Me Anything!")
-[![GitHub license](https://flat.badgen.net/github/license/sanidhyy/genius-ai?icon=github&color=black&scale=1.01)](https://github.com/sanidhyy/genius-ai/blob/main/LICENSE "GitHub license")
-[![Maintenance](https://flat.badgen.net/static/Maintained/yes?icon=github&color=black&scale=1.01)](https://github.com/sanidhyy/genius-ai/commits/main "Maintenance")
-[![GitHub branches](https://flat.badgen.net/github/branches/sanidhyy/genius-ai?icon=github&color=black&scale=1.01)](https://github.com/sanidhyy/genius-ai/branches "GitHub branches")
-[![Github commits](https://flat.badgen.net/github/commits/sanidhyy/genius-ai?icon=github&color=black&scale=1.01)](https://github.com/sanidhyy/genius-ai/commits "Github commits")
-[![GitHub issues](https://flat.badgen.net/github/issues/sanidhyy/genius-ai?icon=github&color=black&scale=1.01)](https://github.com/sanidhyy/genius-ai/issues "GitHub issues")
-[![GitHub pull requests](https://flat.badgen.net/github/prs/sanidhyy/genius-ai?icon=github&color=black&scale=1.01)](https://github.com/sanidhyy/genius-ai/pulls "GitHub pull requests")
+[![Ask Me Anything!](https://flat.badgen.net/static/Ask%20me/anything?icon=github&color=black&scale=1.01)](https://github.com/leodevzone "Ask Me Anything!")
+[![GitHub license](https://flat.badgen.net/github/license/leodevzone/genius-ai?icon=github&color=black&scale=1.01)](https://github.com/leodevzone/genius-ai/blob/main/LICENSE "GitHub license")
+[![Maintenance](https://flat.badgen.net/static/Maintained/yes?icon=github&color=black&scale=1.01)](https://github.com/leodevzone/genius-ai/commits/main "Maintenance")
+[![GitHub branches](https://flat.badgen.net/github/branches/leodevzone/genius-ai?icon=github&color=black&scale=1.01)](https://github.com/leodevzone/genius-ai/branches "GitHub branches")
+[![Github commits](https://flat.badgen.net/github/commits/leodevzone/genius-ai?icon=github&color=black&scale=1.01)](https://github.com/leodevzone/genius-ai/commits "Github commits")
+[![GitHub issues](https://flat.badgen.net/github/issues/leodevzone/genius-ai?icon=github&color=black&scale=1.01)](https://github.com/leodevzone/genius-ai/issues "GitHub issues")
+[![GitHub pull requests](https://flat.badgen.net/github/prs/leodevzone/genius-ai?icon=github&color=black&scale=1.01)](https://github.com/leodevzone/genius-ai/pulls "GitHub pull requests")
 [![Netlify Status](https://api.netlify.com/api/v1/badges/b63626db-a322-49c1-b8d7-60ab157e7da6/deploy-status)](https://ai-genius.netlify.app/ "Netlify Status")
 
 <!-- Table of Contents -->
@@ -315,8 +315,8 @@ Useful resources and dependencies that are used in Genius.
 
 ## :rocket: Follow Me
 
-[![Follow Me](https://img.shields.io/github/followers/sanidhyy?style=social&label=Follow&maxAge=2592000)](https://github.com/sanidhyy "Follow Me")
-[![Tweet about this project](https://img.shields.io/twitter/url?style=social&url=https%3A%2F%2Ftwitter.com%2FTechnicalShubam)](https://twitter.com/intent/tweet?text=Check+out+this+amazing+app:&url=https%3A%2F%2Fgithub.com%2Fsanidhyy%2Fgenius-ai "Tweet about this project")
+[![Follow Me](https://img.shields.io/github/followers/leodevzone?style=social&label=Follow&maxAge=2592000)](https://github.com/leodevzone "Follow Me")
+[![Tweet about this project](https://img.shields.io/twitter/url?style=social&url=https%3A%2F%2Ftwitter.com%2FTechnicalShubam)](https://twitter.com/intent/tweet?text=Check+out+this+amazing+app:&url=https%3A%2F%2Fgithub.com%2Fleodevzone%2Fgenius-ai "Tweet about this project")
 [![Subscribe to my YouTube Channel](https://img.shields.io/youtube/channel/subscribers/UCNAz_hUVBG2ZUN8TVm0bmYw)](https://www.youtube.com/@OPGAMER./?sub_confirmation=1 "Subscribe to my YouTube Channel")
 
 ## :books: Learn More
@@ -340,11 +340,11 @@ You can also give this repository a star to show more people and they can use th
 
 ## :star2: Star History
 
-<a href="https://star-history.com/#sanidhyy/genius-ai&Timeline">
+<a href="https://star-history.com/#leodevzone/genius-ai&Timeline">
 <picture>
-  <source media="(prefers-color-scheme: dark)" srcset="https://api.star-history.com/svg?repos=sanidhyy/genius-ai&type=Timeline&theme=dark" />
-  <source media="(prefers-color-scheme: light)" srcset="https://api.star-history.com/svg?repos=sanidhyy/genius-ai&type=Timeline" />
-  <img alt="Star History Chart" src="https://api.star-history.com/svg?repos=sanidhyy/genius-ai&type=Timeline" />
+  <source media="(prefers-color-scheme: dark)" srcset="https://api.star-history.com/svg?repos=leodevzone/genius-ai&type=Timeline&theme=dark" />
+  <source media="(prefers-color-scheme: light)" srcset="https://api.star-history.com/svg?repos=leodevzone/genius-ai&type=Timeline" />
+  <img alt="Star History Chart" src="https://api.star-history.com/svg?repos=leodevzone/genius-ai&type=Timeline" />
 </picture>
 </a>
 
