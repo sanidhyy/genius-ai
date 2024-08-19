@@ -48,12 +48,15 @@ export const TESTIMONIALS = [
 export const CAPABILITIES_TITLE = "La mejor herramienta de IA para" as const;
 export const CAPABILITIES_FOOTER = "Acelere su negocio usando IA 10x más rápido." as const;
 export const CAPABILITIES_TOOLS = [
-  "Generación de ideas.",
-  "Generación de contenido.",
+  "Potenciar tus ideas.",
+  "Creación de contenido.",
   "Descubrimiento de insights.",
-  "Identificar tendencias y estrategias.",
+  "Identificar estrategias.",
   "Innovación disruptiva.",
 ] as const;
+
+export const ACCESS_TITLE = "Pruebe gratis" as const;
+export const ACCESS_FOOTER = "No se requiere Tarjeta" as const;
 
 export const TOOLS = [
   {

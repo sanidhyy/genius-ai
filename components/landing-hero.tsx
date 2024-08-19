@@ -40,13 +40,13 @@ export const LandingHero = () => {
           asChild
         >
           <Link href={isSignedIn ? "/dashboard" : "/sign-up"}>
-            Start Generating For Free
+            {ACCESS_TITLE}
           </Link>
         </Button>
       </div>
 
       <div className="text-zinc-400 text-xs md:text-sm font-normal">
-        No credit card required.
+        {ACCESS_FOOTER}
       </div>
     </div>
   );
