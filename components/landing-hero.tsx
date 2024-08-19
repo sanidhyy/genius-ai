@@ -4,9 +4,9 @@ import { useAuth } from "@clerk/nextjs";
 import Link from "next/link";
 import TypewriterComponent from "typewriter-effect";
 import { Button } from "./ui/button";
-import { CAPABILITIES_TITLE } from "@/constants";
-import { CAPABILITIES_TOOLS } from "@/constants";
-import { CAPABILITIES_FOOTER } from "@/constants";
+import { CAPABILITIES_TITLE } from "./constants";
+import { CAPABILITIES_TOOLS } from "./constants";
+import { CAPABILITIES_FOOTER } from "./constants";
 
 
 export const LandingHero = () => {
@@ -19,7 +19,7 @@ export const LandingHero = () => {
         <div className="text-transparent bg-clip-text bg-gradient-to-r from-purple-400 to-pink-600">
 		  <TypewriterComponent
             options={{
-              CAPABILITIES_TOOLS, // Use the strings constant
+              strings: CAPABILITIES_TOOLS, // Use the strings constant
               autoStart: true,
               loop: true,
             }}
