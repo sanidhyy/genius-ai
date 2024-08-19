@@ -12,11 +12,9 @@ import {
   VideoIcon,
 } from "lucide-react";
 
-export const SITE_NAME = 'Simon-ai';
+export const SITE_NAME = "Simon-ai";
 
 export const MAX_FREE_COUNTS = 5 as const;
-
-
 
 export const TESTIMONIALS = [
   {
@@ -47,8 +45,8 @@ export const TESTIMONIALS = [
     description: "Incredible features and user-friendly design. Love it!",
   },
 ] as const;
-export const CAPABILITIES_TITLE = 'La mejor herramienta de IA para';
-export const CAPABILITIES_FOOTER = 'Acelere su negocio usando IA 10x más rápido.';
+export const CAPABILITIES_TITLE = "La mejor herramienta de IA para" as const;
+export const CAPABILITIES_FOOTER = "Acelere su negocio usando IA 10x más rápido." as const;
 export const CAPABILITIES_TOOLS = [
   "Generación de ideas.",
   "Generación de contenido.",
