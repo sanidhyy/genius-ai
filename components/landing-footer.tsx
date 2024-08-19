@@ -4,17 +4,18 @@ import Image from "next/image";
 import Link from "next/link";
 
 import { FOOTER_LINKS } from "@/constants";
+import { SITE_NAME } from "@/constants";
 
 export const LandingFooter = () => {
   return (
     <nav className="p-8 bg-transparent flex items-center justify-between">
       <Link href="/" className="flex items-center">
         <div className="relative h-8 w-8 mr-4">
-          <Image src="/logo.png" alt="Genius logo" fill />
+          <Image src="/logo.png" alt={`${SITE_NAME} logo`} fill />
         </div>
       </Link>
       <div className="text-white text-[15px]">
-        &copy; <span className="font-bold">Genius</span>{" "}
+        &copy; <span className="font-bold">{SITE_NAME}</span>{" "}
         {new Date().getFullYear()}. All rights reserved.
       </div>
 

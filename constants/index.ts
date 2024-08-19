@@ -12,6 +12,8 @@ import {
   VideoIcon,
 } from "lucide-react";
 
+export const SITE_NAME = 'Simon-ai';
+
 export const MAX_FREE_COUNTS = 5 as const;
 
 export const TESTIMONIALS = [
@@ -23,7 +25,7 @@ export const TESTIMONIALS = [
       "This application has significantly boosted our marketing efforts.",
   },
   {
-    name: "Emily",
+    name: "Emilia",
     image: "/testimonials/user-2.jpeg",
     title: "Student",
     description:
