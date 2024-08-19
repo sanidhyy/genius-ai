@@ -19,6 +19,8 @@ import {
 import { TOOLS } from "@/constants";
 import { useProModal } from "@/hooks/use-pro-modal";
 import { cn } from "@/lib/utils";
+import { SITE_NAME } from "@/constants";
+
 
 export const ProModal = () => {
   const proModal = useProModal();
@@ -45,7 +47,7 @@ export const ProModal = () => {
         <DialogHeader>
           <DialogTitle className="flex justify-center items-center flex-col gap-y-4 pb-2">
             <div className="flex items-center gap-x-2 font-bold py-1">
-              Upgrade to Genius
+              Upgrade to {SITE_NAME}
               <Badge className="uppercase text-sm py-1" variant="premium">
                 pro
               </Badge>
