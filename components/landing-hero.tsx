@@ -5,9 +5,9 @@ import Link from "next/link";
 import TypewriterComponent from "typewriter-effect";
 import { Button } from "./ui/button";
 
-import { CAPABILITIES_TITLE } from "./constants";
-import { CAPABILITIES_TOOLS } from "./constants";
-import { CAPABILITIES_FOOTER } from "./constants";
+import { CAPABILITIES_TITLE } from "@/constants";
+import { CAPABILITIES_TOOLS } from "@/constants";
+import { CAPABILITIES_FOOTER } from "@/constants";
 
 
 export const LandingHero = () => {
