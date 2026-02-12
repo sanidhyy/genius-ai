@@ -4,8 +4,9 @@ import { zodResolver } from "@hookform/resolvers/zod";
 import axios from "axios";
 import { Code } from "lucide-react";
 import { useRouter } from "next/navigation";
-import type { ChatCompletionRequestMessage } from "openai";
+import type { ChatCompletionCreateParamsBase } from "openai/resources/chat/completions";
 import { useState } from "react";
+
 import { useForm } from "react-hook-form";
 import ReactMarkdown from "react-markdown";
 import { toast } from "sonner";
@@ -23,10 +24,12 @@ import { useProModal } from "@/hooks/use-pro-modal";
 import { cn } from "@/lib/utils";
 import { codeFormSchema } from "@/schemas";
 
+type ChatMessage = ChatCompletionCreateParamsBase["messages"][number];
+
 const CodePage = () => {
   const proModal = useProModal();
   const router = useRouter();
-  const [messages, setMessages] = useState<ChatCompletionRequestMessage[]>([]);
+  const [messages, setMessages] = useState<ChatMessage[]>([]);
 
   const form = useForm<z.infer<typeof codeFormSchema>>({
     resolver: zodResolver(codeFormSchema),
@@ -39,7 +42,7 @@ const CodePage = () => {
 
   const onSubmit = async (values: z.infer<typeof codeFormSchema>) => {
     try {
-      const userMessage: ChatCompletionRequestMessage = {
+      const userMessage: ChatMessage = {
         role: "user",
         content: values.prompt,
       };
@@ -122,7 +125,7 @@ const CodePage = () => {
           <div className="flex flex-col-reverse gap-y-4">
             {messages.map((message) => (
               <div
-                key={message.content}
+                key={message.content?.toString() || ""}
                 className={cn(
                   "p-8 w-full flex items-start gap-x-8 rounded-lg",
                   message.role === "user"
@@ -148,7 +151,7 @@ const CodePage = () => {
                     }}
                     className="text-sm overflow-hidden leading-7"
                   >
-                    {message.content || ""}
+                    {message.content?.toString() || ""}
                   </ReactMarkdown>
                 </p>
               </div>
