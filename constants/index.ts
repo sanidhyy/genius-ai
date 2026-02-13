@@ -117,6 +117,6 @@ export const FOOTER_LINKS = [
   {
     name: "Github",
     icon: Github,
-    link: "https://github.com",
+    link: "https://github.com/sanidhyy",
   },
 ];
