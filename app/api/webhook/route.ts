@@ -7,7 +7,7 @@ import { stripe } from "@/lib/stripe";
 
 export async function POST(req: NextRequest) {
   const body = await req.text();
-  const signature = headers().get("Stripe-Signature") as string;
+  const signature = (await headers()).get("Stripe-Signature") as string;
 
   let event: Stripe.Event;
 
@@ -40,7 +40,7 @@ export async function POST(req: NextRequest) {
         stripeCustomerId: subscription.customer as string,
         stripePriceId: subscription.items.data[0].price.id,
         stripeCurrentPeriodEnd: new Date(
-          subscription.current_period_end * 1000,
+          subscription.items.data[0].current_period_end * 1000,
         ),
       },
     });
@@ -58,7 +58,7 @@ export async function POST(req: NextRequest) {
       data: {
         stripePriceId: subscription.items.data[0].price.id,
         stripeCurrentPeriodEnd: new Date(
-          subscription.current_period_end * 1000,
+          subscription.items.data[0].current_period_end * 1000,
         ),
       },
     });
