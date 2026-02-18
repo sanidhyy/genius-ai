@@ -8,6 +8,7 @@ import type { ChatCompletionCreateParamsBase } from "openai/resources/chat/compl
 import { useState } from "react";
 
 import { useForm } from "react-hook-form";
+import ReactMarkdown from "react-markdown";
 import { toast } from "sonner";
 import * as z from "zod";
 
@@ -133,7 +134,34 @@ const ConversationPage = () => {
                 )}
               >
                 {message.role === "user" ? <UserAvatar /> : <BotAvatar />}
-                <p className="text-sm">{message.content?.toString() || ""}</p>
+                <p className="text-sm">
+                  <ReactMarkdown
+                    components={{
+                      pre: ({ node, ...props }) => (
+                        <div className="overflow-auto w-full my-2 bg-black/10 p-2 rounded-lg">
+                          <pre {...props} />
+                        </div>
+                      ),
+                      code: ({ node, className, ...props }) => (
+                        <code
+                          className={cn(className, "rounded-lg p-1")}
+                          {...props}
+                        />
+                      ),
+                      div: ({ node, className, ...props }) => (
+                        <div
+                          className={cn(
+                            className,
+                            "text-sm overflow-hidden leading-7",
+                          )}
+                          {...props}
+                        />
+                      ),
+                    }}
+                  >
+                    {message.content?.toString() || ""}
+                  </ReactMarkdown>
+                </p>
               </div>
             ))}
           </div>

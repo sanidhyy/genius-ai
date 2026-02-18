@@ -142,14 +142,22 @@ const CodePage = () => {
                           <pre {...props} />
                         </div>
                       ),
-                      code: ({ node, ...props }) => (
+                      code: ({ node, className, ...props }) => (
                         <code
-                          className="bg-black/10 rounded-lg p-1"
+                          className={cn(className, "rounded-lg p-1")}
+                          {...props}
+                        />
+                      ),
+                      div: ({ node, className, ...props }) => (
+                        <div
+                          className={cn(
+                            className,
+                            "text-sm overflow-hidden leading-7",
+                          )}
                           {...props}
                         />
                       ),
                     }}
-                    className="text-sm overflow-hidden leading-7"
                   >
                     {message.content?.toString() || ""}
                   </ReactMarkdown>
