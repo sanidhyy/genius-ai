@@ -44,36 +44,13 @@
 Here is the folder structure of this app.
 
 <!--- FOLDER_STRUCTURE_START --->
-
 ```bash
 genius-ai/
   |- app/
     |-- (auth)/
-        |--- (routes)/
-            |---- sign-in/[[...sign-in]]/
-            |---- sign-up/[[...sign-up]]/
-        |--- layout.tsx
     |-- (dashboard)/
-        |--- (routes)/
-            |---- code/
-            |---- conversation/
-            |---- dashboard/
-            |---- image/
-            |---- music/
-            |---- settings/
-            |---- video/
-        |--- layout.tsx
     |-- (landing)/
-        |--- layout.tsx
-        |--- page.tsx
     |-- api/
-        |--- code/
-        |--- conversation/
-        |--- image/
-        |--- music/
-        |--- stripe/
-        |--- video/
-        |--- webhook/
     |-- apple-icon.png
     |-- favicon.ico
     |-- globals.css
@@ -117,25 +94,23 @@ genius-ai/
     |-- modal-provider.tsx
     |-- toaster-provider.tsx
   |- public/
-    |-- testimonials/
-    |-- empty.png
-    |-- logo.png
   |- schemas/
     |-- index.ts
-  |- .env
   |- .env.example
+  |- .env/.env.local
   |- .eslintrc.json
   |- .gitignore
+  |- bun.lock
   |- components.json
   |- environment.d.ts
+  |- middleware.ts
+  |- netlify.toml
   |- next.config.js
-  |- package-lock.json
   |- package.json
   |- postcss.config.js
   |- tailwind.config.ts
   |- tsconfig.json
 ```
-
 <!--- FOLDER_STRUCTURE_END --->
 
 <br />
@@ -275,44 +250,45 @@ Useful resources and dependencies that are used in Genius.
 
 - Thanks to CodeWithAntonio: https://codewithantonio.com/
 <!--- DEPENDENCIES_START --->
-- [@clerk/nextjs](https://www.npmjs.com/package/@clerk/nextjs): ^4.29.3
-- [@hookform/resolvers](https://www.npmjs.com/package/@hookform/resolvers): ^3.3.4
+- [@clerk/nextjs](https://www.npmjs.com/package/@clerk/nextjs): ^4.31.5
+- [@hookform/resolvers](https://www.npmjs.com/package/@hookform/resolvers): ^3.10.0
 - [@prisma/client](https://www.npmjs.com/package/@prisma/client): ^5.8.0
-- [@radix-ui/react-avatar](https://www.npmjs.com/package/@radix-ui/react-avatar): ^1.0.4
-- [@radix-ui/react-dialog](https://www.npmjs.com/package/@radix-ui/react-dialog): ^1.0.5
-- [@radix-ui/react-label](https://www.npmjs.com/package/@radix-ui/react-label): ^2.0.2
-- [@radix-ui/react-progress](https://www.npmjs.com/package/@radix-ui/react-progress): ^1.0.3
-- [@radix-ui/react-select](https://www.npmjs.com/package/@radix-ui/react-select): ^2.0.0
-- [@radix-ui/react-slot](https://www.npmjs.com/package/@radix-ui/react-slot): ^1.0.2
-- [axios](https://www.npmjs.com/package/axios): ^1.6.5
-- [class-variance-authority](https://www.npmjs.com/package/class-variance-authority): ^0.7.0
-- [clsx](https://www.npmjs.com/package/clsx): ^2.1.0
-- [crisp-sdk-web](https://www.npmjs.com/package/crisp-sdk-web): ^1.0.21
-- [lucide-react](https://www.npmjs.com/package/lucide-react): ^0.309.0
-- [next](https://www.npmjs.com/package/next): 14.0.4
-- [openai](https://www.npmjs.com/package/openai): ^3.3.0
-- [react](https://www.npmjs.com/package/react): ^18
-- [react-dom](https://www.npmjs.com/package/react-dom): ^18
-- [react-hook-form](https://www.npmjs.com/package/react-hook-form): ^7.49.3
-- [react-markdown](https://www.npmjs.com/package/react-markdown): ^9.0.1
-- [replicate](https://www.npmjs.com/package/replicate): ^0.25.2
-- [sonner](https://www.npmjs.com/package/sonner): ^1.3.1
-- [stripe](https://www.npmjs.com/package/stripe): ^14.12.0
-- [tailwind-merge](https://www.npmjs.com/package/tailwind-merge): ^2.2.0
-- [tailwindcss-animate](https://www.npmjs.com/package/tailwindcss-animate): ^1.0.7
-- [typewriter-effect](https://www.npmjs.com/package/typewriter-effect): ^2.21.0
-- [zod](https://www.npmjs.com/package/zod): ^3.22.4
-- [zustand](https://www.npmjs.com/package/zustand): ^4.4.7
-- [@types/node](https://www.npmjs.com/package/@types/node): ^20
-- [@types/react](https://www.npmjs.com/package/@types/react): ^18
-- [@types/react-dom](https://www.npmjs.com/package/@types/react-dom): ^18
-- [autoprefixer](https://www.npmjs.com/package/autoprefixer): ^10.0.1
+- [@radix-ui/react-avatar](https://www.npmjs.com/package/@radix-ui/react-avatar): ^1.1.11
+- [@radix-ui/react-dialog](https://www.npmjs.com/package/@radix-ui/react-dialog): ^1.1.15
+- [@radix-ui/react-label](https://www.npmjs.com/package/@radix-ui/react-label): ^2.1.8
+- [@radix-ui/react-progress](https://www.npmjs.com/package/@radix-ui/react-progress): ^1.1.8
+- [@radix-ui/react-select](https://www.npmjs.com/package/@radix-ui/react-select): ^2.2.6
+- [@radix-ui/react-slot](https://www.npmjs.com/package/@radix-ui/react-slot): ^1.2.4
+- [@types/node](https://www.npmjs.com/package/@types/node): ^25.2.3
+- [@types/react](https://www.npmjs.com/package/@types/react): ^19.2.14
+- [@types/react-dom](https://www.npmjs.com/package/@types/react-dom): ^19.2.3
+- [autoprefixer](https://www.npmjs.com/package/autoprefixer): ^10.4.24
+- [axios](https://www.npmjs.com/package/axios): ^1.13.5
+- [class-variance-authority](https://www.npmjs.com/package/class-variance-authority): ^0.7.1
+- [clsx](https://www.npmjs.com/package/clsx): ^2.1.1
+- [crisp-sdk-web](https://www.npmjs.com/package/crisp-sdk-web): ^1.0.27
 - [eslint](https://www.npmjs.com/package/eslint): ^8
 - [eslint-config-next](https://www.npmjs.com/package/eslint-config-next): 14.0.4
+- [lucide-react](https://www.npmjs.com/package/lucide-react): ^0.574.0
+- [next](https://www.npmjs.com/package/next): 15.5.10
+- [openai](https://www.npmjs.com/package/openai): ^6.22.0
 - [postcss](https://www.npmjs.com/package/postcss): ^8
 - [prisma](https://www.npmjs.com/package/prisma): ^5.8.0
+- [react](https://www.npmjs.com/package/react): ^19.2.4
+- [react-dom](https://www.npmjs.com/package/react-dom): ^19.2.4
+- [react-hook-form](https://www.npmjs.com/package/react-hook-form): ^7.71.1
+- [react-markdown](https://www.npmjs.com/package/react-markdown): ^10.1.0
+- [replicate](https://www.npmjs.com/package/replicate): ^0.25.2
+- [sonner](https://www.npmjs.com/package/sonner): ^2.0.7
+- [stripe](https://www.npmjs.com/package/stripe): ^20.3.1
+- [tailwind-merge](https://www.npmjs.com/package/tailwind-merge): ^2.6.1
 - [tailwindcss](https://www.npmjs.com/package/tailwindcss): ^3.3.0
-- [typescript](https://www.npmjs.com/package/typescript): ^5
+- [tailwindcss-animate](https://www.npmjs.com/package/tailwindcss-animate): ^1.0.7
+- [typescript](https://www.npmjs.com/package/typescript): ^5.9.3
+- [typewriter-effect](https://www.npmjs.com/package/typewriter-effect): ^2.22.0
+- [zod](https://www.npmjs.com/package/zod): ^4.3.6
+- [zustand](https://www.npmjs.com/package/zustand): ^5.0.11
+
 <!--- DEPENDENCIES_END --->
 
 ## :coffee: Buy Me a Coffee
