@@ -23,10 +23,11 @@ export const checkSubscription = async () => {
 
   if (!userSubscription) return false;
 
+  const periodEnd = userSubscription.stripeCurrentPeriodEnd?.getTime();
   const isSubscribed =
-    userSubscription.stripePriceId &&
-    userSubscription.stripeCurrentPeriodEnd?.getTime()! + DAY_IN_MS >
-      Date.now();
+    Boolean(userSubscription.stripePriceId) &&
+    periodEnd !== undefined &&
+    periodEnd + DAY_IN_MS > Date.now();
 
   return !!isSubscribed;
 };

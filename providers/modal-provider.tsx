@@ -1,15 +1,10 @@
 "use client";
 
-import { useEffect, useState } from "react";
-
 import { ProModal } from "@/components/pro-modal";
+import { useHydrated } from "@/hooks/use-hydrated";
 
 export const ModalProvider = () => {
-  const [isMounted, setIsMounted] = useState(false);
-
-  useEffect(() => {
-    setIsMounted(true);
-  }, []);
+  const isMounted = useHydrated();
 
   if (!isMounted) return null;
 

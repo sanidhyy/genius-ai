@@ -54,7 +54,7 @@ const ConversationPage = () => {
       });
 
       setMessages((current) => [...current, userMessage, response.data]);
-    } catch (error: any) {
+    } catch (error: unknown) {
       if (axios.isAxiosError(error) && error?.response?.status === 403)
         proModal.onOpen();
       else toast.error("Something went wrong.");
@@ -137,18 +137,18 @@ const ConversationPage = () => {
                 <p className="text-sm">
                   <ReactMarkdown
                     components={{
-                      pre: ({ node, ...props }) => (
+                      pre: ({ ...props }) => (
                         <div className="overflow-auto w-full my-2 bg-black/10 p-2 rounded-lg">
                           <pre {...props} />
                         </div>
                       ),
-                      code: ({ node, className, ...props }) => (
+                      code: ({ className, ...props }) => (
                         <code
                           className={cn(className, "rounded-lg p-1")}
                           {...props}
                         />
                       ),
-                      div: ({ node, className, ...props }) => (
+                      div: ({ className, ...props }) => (
                         <div
                           className={cn(
                             className,

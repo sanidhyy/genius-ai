@@ -1,12 +1,12 @@
 "use client";
 
 import { Zap } from "lucide-react";
-import { useEffect, useState } from "react";
 
 import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
 import { Progress } from "@/components/ui/progress";
 import { MAX_FREE_COUNTS } from "@/constants";
+import { useHydrated } from "@/hooks/use-hydrated";
 import { useProModal } from "@/hooks/use-pro-modal";
 
 type FreeCounterProps = {
@@ -19,11 +19,7 @@ export const FreeCounter = ({
   isPro = false,
 }: FreeCounterProps) => {
   const proModal = useProModal();
-  const [isMounted, setIsMounted] = useState(false);
-
-  useEffect(() => {
-    setIsMounted(true);
-  }, []);
+  const isMounted = useHydrated();
 
   if (!isMounted) return null;
 
