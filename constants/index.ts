@@ -1,16 +1,19 @@
 import {
   Code,
-  Facebook,
-  Github,
   ImageIcon,
-  Instagram,
   LayoutDashboard,
   MessageSquare,
   Music,
   Settings,
-  Twitter,
   VideoIcon,
 } from "lucide-react";
+
+import {
+  FacebookIcon,
+  GithubIcon,
+  InstagramIcon,
+  TwitterIcon,
+} from "@/components/icons";
 
 export const MAX_FREE_COUNTS = 5 as const;
 
@@ -101,22 +104,22 @@ export const ROUTES = [
 export const FOOTER_LINKS = [
   {
     name: "Facebook",
-    icon: Facebook,
+    icon: FacebookIcon,
     link: "https://facebook.com",
   },
   {
     name: "Twitter",
-    icon: Twitter,
+    icon: TwitterIcon,
     link: "https://x.com/_sanidhyy",
   },
   {
     name: "Instagram",
-    icon: Instagram,
+    icon: InstagramIcon,
     link: "https://instagram.com",
   },
   {
     name: "Github",
-    icon: Github,
+    icon: GithubIcon,
     link: "https://github.com/sanidhyy",
   },
 ];

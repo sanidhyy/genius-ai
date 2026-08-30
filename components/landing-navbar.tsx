@@ -1,11 +1,11 @@
 "use client";
 
 import { useAuth } from "@clerk/nextjs";
-import { Github } from "lucide-react";
 import { Montserrat } from "next/font/google";
 import Image from "next/image";
 import Link from "next/link";
 
+import { GithubIcon } from "@/components/icons";
 import { Button } from "@/components/ui/button";
 import { links } from "@/config";
 import { cn } from "@/lib/utils";
@@ -41,7 +41,7 @@ export const LandingNavbar = () => {
             target="_blank"
             rel="noreferrer noopener"
           >
-            <Github className="h-5 w-5" />
+            <GithubIcon className="h-5 w-5" />
           </Link>
         </Button>
       </div>
