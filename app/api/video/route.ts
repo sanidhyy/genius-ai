@@ -11,7 +11,7 @@ const replicate = new Replicate({
 
 export async function POST(req: NextRequest) {
   try {
-    const { userId } = auth();
+    const { userId } = await auth();
 
     const body = await req.json();
     const { prompt } = body;

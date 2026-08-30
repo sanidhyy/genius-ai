@@ -11,7 +11,7 @@ const openai = new OpenAI({
 
 export async function POST(req: NextRequest) {
   try {
-    const { userId } = auth();
+    const { userId } = await auth();
 
     const body = await req.json();
     const { prompt, amount = "1", resolution = "512x512" } = body;
