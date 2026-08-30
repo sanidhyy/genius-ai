@@ -37,7 +37,7 @@ export const FreeCounter = ({
             <Progress
               className="h-3 text-white"
               value={(apiLimitCount / MAX_FREE_COUNTS) * 100}
-              indicatorColor="bg-gradient-to-r from-indigo-500 via-purple-500 to-pink-500"
+              indicatorColor="bg-linear-to-r from-indigo-500 via-purple-500 to-pink-500"
             />
           </div>
 
