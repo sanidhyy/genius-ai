@@ -55,7 +55,7 @@ importers:
         version: 15.5.21(react-dom@19.2.8(react@19.2.8))(react@19.2.8)
       openai:
         specifier: ^6.22.0
-        version: 6.49.0(zod@4.5.2)
+        version: 6.49.0(zod@4.4.3)
       react:
         specifier: ^19.2.4
         version: 19.2.8
@@ -75,8 +75,8 @@ importers:
         specifier: ^2.0.7
         version: 2.0.8(@types/react@19.2.18)(react-dom@19.2.8(react@19.2.8))(react@19.2.8)
       stripe:
-        specifier: ^20.3.1
-        version: 20.4.1(@types/node@25.9.5)
+        specifier: ^22.6.0
+        version: 22.6.0(@types/node@25.9.5)
       tailwind-merge:
         specifier: ^2.6.1
         version: 2.6.1
@@ -88,7 +88,7 @@ importers:
         version: 2.22.0(react-dom@19.2.8(react@19.2.8))(react@19.2.8)
       zod:
         specifier: ^4.3.6
-        version: 4.5.2
+        version: 4.4.3
       zustand:
         specifier: ^5.0.11
         version: 5.0.15(@types/react@19.2.18)(react@19.2.8)(use-sync-external-store@1.6.0(react@19.2.8))
@@ -2693,11 +2693,11 @@ packages:
     resolution: {integrity: sha512-6fPc+R4ihwqP6N/aIv2f1gMH8lOVtWQHoqC4yK6oSDVVocumAsfCqjkXnqiYMhmMwS/mEHLp7Vehlt3ql6lEig==}
     engines: {node: '>=8'}
 
-  stripe@20.4.1:
-    resolution: {integrity: sha512-axCguHItc8Sxt0HC6aSkdVRPffjYPV7EQqZRb2GkIa8FzWDycE7nHJM19C6xAIynH1Qp1/BHiopSi96jGBxT0w==}
-    engines: {node: '>=16'}
+  stripe@22.6.0:
+    resolution: {integrity: sha512-Ezk+WYEEwX2DLxFrKfb6coznlCMZvCaCYMNPXNHFSZkBIEzF5Hgm7RLb38q/0h9Ol5jsUJGJRorvhzAvckgfhw==}
+    engines: {node: '>=18'}
     peerDependencies:
-      '@types/node': '>=16'
+      '@types/node': '>=18'
     peerDependenciesMeta:
       '@types/node':
         optional: true
@@ -2948,8 +2948,8 @@ packages:
     resolution: {integrity: sha512-rVksvsnNCdJ/ohGc6xgPwyN8eheCxsiLM8mxuE/t/mOVqJewPuO1miLpTHQiRgTKCLexL4MeAFVagts7HmNZ2Q==}
     engines: {node: '>=10'}
 
-  zod@4.5.2:
-    resolution: {integrity: sha512-XkYXCol10+ba/6F/cueWV+TezUeOqXW0hdeJt5CdXjTYeAgAQg5N03RQdJ80mhfFE72+pblvYMW4wy2Qp4Qbrg==}
+  zod@4.4.3:
+    resolution: {integrity: sha512-ytENFjIJFl2UwYglde2jchW2Hwm4GJFLDiSXWdTrJQBIN9Fcyp7n4DhxJEiWNAJMV1/BqWfW/kkg71UDcHJyTQ==}
 
   zustand@5.0.15:
     resolution: {integrity: sha512-MpSEjRiBkA9crSYeOUH32rJC7SVqAbm0Fqcqge/bUi2PPoLcBWKOsG+C8mevmpr8TwXHBVkChbbJiyvkE+i/3A==}
@@ -5349,9 +5349,9 @@ snapshots:
     dependencies:
       wrappy: 1.0.2
 
-  openai@6.49.0(zod@4.5.2):
+  openai@6.49.0(zod@4.4.3):
     optionalDependencies:
-      zod: 4.5.2
+      zod: 4.4.3
 
   optionator@0.9.4:
     dependencies:
@@ -5858,7 +5858,7 @@ snapshots:
 
   strip-json-comments@3.1.1: {}
 
-  stripe@20.4.1(@types/node@25.9.5):
+  stripe@22.6.0(@types/node@25.9.5):
     optionalDependencies:
       '@types/node': 25.9.5
 
@@ -6199,7 +6199,7 @@ snapshots:
 
   yocto-queue@0.1.0: {}
 
-  zod@4.5.2: {}
+  zod@4.4.3: {}
 
   zustand@5.0.15(@types/react@19.2.18)(react@19.2.8)(use-sync-external-store@1.6.0(react@19.2.8)):
     optionalDependencies:
