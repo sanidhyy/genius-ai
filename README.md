@@ -44,7 +44,6 @@
 Here is the folder structure of this app.
 
 <!--- FOLDER_STRUCTURE_START --->
-
 ```bash
 genius-ai/
   |- app/
@@ -101,18 +100,18 @@ genius-ai/
   |- .env/.env.local
   |- .eslintrc.json
   |- .gitignore
-  |- bun.lock
   |- components.json
   |- environment.d.ts
   |- middleware.ts
   |- netlify.toml
   |- next.config.js
   |- package.json
+  |- pnpm-lock.yaml
+  |- pnpm-workspace.yaml
   |- postcss.config.js
   |- tailwind.config.ts
   |- tsconfig.json
 ```
-
 <!--- FOLDER_STRUCTURE_END --->
 
 <br />
