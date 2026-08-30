@@ -2,6 +2,9 @@
   "name": "genius-ai",
   "version": "1.0.1",
   "private": true,
+  "engines": {
+    "node": ">=22"
+  },
   "scripts": {
     "dev": "next dev",
     "build": "next build",
@@ -11,7 +14,7 @@
   },
   "dependencies": {
     "@clerk/nextjs": "^4.31.5",
-    "@hookform/resolvers": "^3.10.0",
+    "@hookform/resolvers": "^5.9.1",
     "@prisma/client": "^5.8.0",
     "@radix-ui/react-avatar": "^1.1.11",
     "@radix-ui/react-dialog": "^1.1.15",
@@ -25,12 +28,12 @@
     "crisp-sdk-web": "^1.0.27",
     "lucide-react": "^0.574.0",
     "next": "15.5.21",
-    "openai": "^6.22.0",
+    "openai": "^7.8.0",
     "react": "^19.2.4",
     "react-dom": "^19.2.4",
     "react-hook-form": "^7.71.1",
     "react-markdown": "^10.1.0",
-    "replicate": "^0.25.2",
+    "replicate": "^1.4.0",
     "sonner": "^2.0.7",
     "stripe": "^20.3.1",
     "tailwind-merge": "^2.6.1",
@@ -40,7 +43,7 @@
     "zustand": "^5.0.11"
   },
   "devDependencies": {
-    "@types/node": "^25.2.3",
+    "@types/node": "^26.4.0",
     "@types/react": "^19.2.14",
     "@types/react-dom": "^19.2.3",
     "autoprefixer": "^10.4.24",
