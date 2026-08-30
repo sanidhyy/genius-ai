@@ -64,6 +64,7 @@ genius-ai/
     |-- empty.tsx
     |-- free-counter.tsx
     |-- heading.tsx
+    |-- icons.tsx
     |-- landing-content.tsx
     |-- landing-footer.tsx
     |-- landing-hero.tsx
@@ -80,6 +81,7 @@ genius-ai/
   |- constants/
     |-- index.ts
   |- hooks/
+    |-- use-hydrated.ts
     |-- use-pro-modal.tsx
   |- lib/
     |-- api-limit.ts
@@ -98,18 +100,18 @@ genius-ai/
     |-- index.ts
   |- .env.example
   |- .env/.env.local
-  |- .eslintrc.json
   |- .gitignore
   |- components.json
   |- environment.d.ts
-  |- middleware.ts
+  |- eslint.config.mjs
   |- netlify.toml
   |- next.config.js
   |- package.json
   |- pnpm-lock.yaml
   |- pnpm-workspace.yaml
   |- postcss.config.js
-  |- tailwind.config.ts
+  |- prisma.config.ts
+  |- proxy.ts
   |- tsconfig.json
 ```
 <!--- FOLDER_STRUCTURE_END --->
@@ -259,41 +261,42 @@ Useful resources and dependencies that are used in Genius.
 
 - Thanks to CodeWithAntonio: https://codewithantonio.com/
 <!--- DEPENDENCIES_START --->
-- [@clerk/nextjs](https://www.npmjs.com/package/@clerk/nextjs): ^4.31.5
-- [@hookform/resolvers](https://www.npmjs.com/package/@hookform/resolvers): ^3.10.0
-- [@prisma/client](https://www.npmjs.com/package/@prisma/client): ^5.8.0
+- [@clerk/nextjs](https://www.npmjs.com/package/@clerk/nextjs): ^7.8.3
+- [@hookform/resolvers](https://www.npmjs.com/package/@hookform/resolvers): ^5.9.1
+- [@prisma/adapter-mariadb](https://www.npmjs.com/package/@prisma/adapter-mariadb): ^7.10.0
+- [@prisma/client](https://www.npmjs.com/package/@prisma/client): ^7.10.0
 - [@radix-ui/react-avatar](https://www.npmjs.com/package/@radix-ui/react-avatar): ^1.1.11
 - [@radix-ui/react-dialog](https://www.npmjs.com/package/@radix-ui/react-dialog): ^1.1.15
 - [@radix-ui/react-label](https://www.npmjs.com/package/@radix-ui/react-label): ^2.1.8
 - [@radix-ui/react-progress](https://www.npmjs.com/package/@radix-ui/react-progress): ^1.1.8
 - [@radix-ui/react-select](https://www.npmjs.com/package/@radix-ui/react-select): ^2.2.6
 - [@radix-ui/react-slot](https://www.npmjs.com/package/@radix-ui/react-slot): ^1.2.4
-- [@types/node](https://www.npmjs.com/package/@types/node): ^25.2.3
-- [@types/react](https://www.npmjs.com/package/@types/react): ^19.2.14
-- [@types/react-dom](https://www.npmjs.com/package/@types/react-dom): ^19.2.3
-- [autoprefixer](https://www.npmjs.com/package/autoprefixer): ^10.4.24
+- [@tailwindcss/postcss](https://www.npmjs.com/package/@tailwindcss/postcss): ^4.3.3
+- [@types/node](https://www.npmjs.com/package/@types/node): ^26.4.0
+- [@types/react](https://www.npmjs.com/package/@types/react): 19.2.18
+- [@types/react-dom](https://www.npmjs.com/package/@types/react-dom): 19.2.5
 - [axios](https://www.npmjs.com/package/axios): ^1.13.5
 - [class-variance-authority](https://www.npmjs.com/package/class-variance-authority): ^0.7.1
 - [clsx](https://www.npmjs.com/package/clsx): ^2.1.1
 - [crisp-sdk-web](https://www.npmjs.com/package/crisp-sdk-web): ^1.0.27
-- [eslint](https://www.npmjs.com/package/eslint): ^8
-- [eslint-config-next](https://www.npmjs.com/package/eslint-config-next): 14.0.4
-- [lucide-react](https://www.npmjs.com/package/lucide-react): ^0.574.0
-- [next](https://www.npmjs.com/package/next): 15.5.21
-- [openai](https://www.npmjs.com/package/openai): ^6.22.0
+- [dotenv](https://www.npmjs.com/package/dotenv): ^17.4.2
+- [eslint](https://www.npmjs.com/package/eslint): 9.39.5
+- [eslint-config-next](https://www.npmjs.com/package/eslint-config-next): 16.3.3
+- [lucide-react](https://www.npmjs.com/package/lucide-react): ^1.37.0
+- [next](https://www.npmjs.com/package/next): 16.3.3
+- [openai](https://www.npmjs.com/package/openai): ^7.8.0
 - [postcss](https://www.npmjs.com/package/postcss): ^8
-- [prisma](https://www.npmjs.com/package/prisma): ^5.8.0
-- [react](https://www.npmjs.com/package/react): ^19.2.4
-- [react-dom](https://www.npmjs.com/package/react-dom): ^19.2.4
+- [prisma](https://www.npmjs.com/package/prisma): ^7.10.0
+- [react](https://www.npmjs.com/package/react): 19.2.8
+- [react-dom](https://www.npmjs.com/package/react-dom): 19.2.8
 - [react-hook-form](https://www.npmjs.com/package/react-hook-form): ^7.71.1
 - [react-markdown](https://www.npmjs.com/package/react-markdown): ^10.1.0
-- [replicate](https://www.npmjs.com/package/replicate): ^0.25.2
+- [replicate](https://www.npmjs.com/package/replicate): ^1.4.0
 - [sonner](https://www.npmjs.com/package/sonner): ^2.0.7
-- [stripe](https://www.npmjs.com/package/stripe): ^20.3.1
-- [tailwind-merge](https://www.npmjs.com/package/tailwind-merge): ^2.6.1
-- [tailwindcss](https://www.npmjs.com/package/tailwindcss): ^3.3.0
-- [tailwindcss-animate](https://www.npmjs.com/package/tailwindcss-animate): ^1.0.7
-- [typescript](https://www.npmjs.com/package/typescript): ^5.9.3
+- [stripe](https://www.npmjs.com/package/stripe): ^22.6.0
+- [tailwind-merge](https://www.npmjs.com/package/tailwind-merge): ^3.6.0
+- [tailwindcss](https://www.npmjs.com/package/tailwindcss): ^4.3.3
+- [typescript](https://www.npmjs.com/package/typescript): ^6.0.3
 - [typewriter-effect](https://www.npmjs.com/package/typewriter-effect): ^2.22.0
 - [zod](https://www.npmjs.com/package/zod): ^4.3.6
 - [zustand](https://www.npmjs.com/package/zustand): ^5.0.11
