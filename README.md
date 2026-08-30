@@ -44,6 +44,7 @@
 Here is the folder structure of this app.
 
 <!--- FOLDER_STRUCTURE_START --->
+
 ```bash
 genius-ai/
   |- app/
@@ -111,6 +112,7 @@ genius-ai/
   |- tailwind.config.ts
   |- tsconfig.json
 ```
+
 <!--- FOLDER_STRUCTURE_END --->
 
 <br />
@@ -216,9 +218,9 @@ Sign up on [Crisp](https://crisp.chat/en/) and create a website. Once created, f
 NEXT_PUBLIC_CRISP_WEBSITE_ID=xxxxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxx
 ```
 
-12. Open terminal in root directory. Run `npm install --legacy-peer-deps` or `yarn install --legacy-peer-deps`.
+12. Open terminal in root directory. Run `npm install --legacy-peer-deps` or `pnpm install --legacy-peer-deps`.
 
-13. Now app is fully configured 👍 and you can start using this app using either one of `npm run dev` or `yarn dev`.
+13. Now app is fully configured 👍 and you can start using this app using either one of `npm run dev` or `pnpm dev`.
 
 **NOTE:** Please make sure to keep your API keys and configuration values secure and do not expose them publicly.
 
