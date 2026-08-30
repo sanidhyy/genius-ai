@@ -14,7 +14,7 @@ export const Navbar = async () => {
       <MobileSidebar apiLimitCount={apiLimitCount} isPro={isPro} />
 
       <div className="flex w-full justify-end">
-        <UserButton afterSignOutUrl="/" />
+        <UserButton />
       </div>
     </div>
   );

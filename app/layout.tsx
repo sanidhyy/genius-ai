@@ -16,24 +16,25 @@ export const metadata: Metadata = siteConfig;
 
 export default function RootLayout({ children }: PropsWithChildren) {
   return (
-    <ClerkProvider
-      appearance={{
-        variables: {
-          colorPrimary: "#6F5AF6",
-        },
-        layout: {
-          logoPlacement: "none",
-        },
-      }}
-    >
-      <html lang="en">
-        <CrispProvider />
-        <body className={inter.className}>
+    <html lang="en">
+      <CrispProvider />
+      <body className={inter.className}>
+        <ClerkProvider
+          afterSignOutUrl="/"
+          appearance={{
+            variables: {
+              colorPrimary: "#6F5AF6",
+            },
+            options: {
+              logoPlacement: "none",
+            },
+          }}
+        >
           <ModalProvider />
           <ToasterProvider />
           {children}
-        </body>
-      </html>
-    </ClerkProvider>
+        </ClerkProvider>
+      </body>
+    </html>
   );
 }
