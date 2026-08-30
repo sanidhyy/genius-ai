@@ -39,3 +39,6 @@ next-env.d.ts
 
 # Local Netlify folder
 .netlify
+
+# generated prisma client
+/lib/generated/prisma
