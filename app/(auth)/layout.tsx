@@ -13,7 +13,7 @@ const montserrat = Montserrat({
 const AuthLayout = ({ children }: PropsWithChildren) => {
   return (
     <div className="flex flex-col items-center justify-center gap-y-8 h-full">
-      <Link href="/dashboard" className="flex items-center">
+      <Link prefetch href="/dashboard" className="flex items-center">
         <div className="relative w-8 h-8 mr-4">
           <Image src="/logo.png" alt="Genius logo" fill />
         </div>

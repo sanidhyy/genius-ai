@@ -8,7 +8,7 @@ import { FOOTER_LINKS } from "@/constants";
 export const LandingFooter = () => {
   return (
     <nav className="p-8 bg-transparent flex items-center justify-between">
-      <Link href="/" className="flex items-center">
+      <Link prefetch href="/" className="flex items-center">
         <div className="relative h-8 w-8 mr-4">
           <Image src="/logo.png" alt="Genius logo" fill />
         </div>

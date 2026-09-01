@@ -39,7 +39,7 @@ export const LandingHero = () => {
           className="md:text-lg p-4 md:p-6 rounded-full font-semibold"
           asChild
         >
-          <Link href={isSignedIn ? "/dashboard" : "/sign-up"}>
+          <Link prefetch href={isSignedIn ? "/dashboard" : "/sign-up"}>
             Start Generating For Free
           </Link>
         </Button>

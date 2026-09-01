@@ -20,7 +20,7 @@ export const LandingNavbar = () => {
 
   return (
     <nav className="p-4 bg-transparent flex items-center justify-between">
-      <Link href="/" className="flex items-center">
+      <Link prefetch href="/" className="flex items-center">
         <div className="relative h-8 w-8 mr-4">
           <Image src="/logo.png" alt="Genius logo" fill />
         </div>
@@ -32,7 +32,9 @@ export const LandingNavbar = () => {
 
       <div className="flex items-center gap-x-2">
         <Button variant="outline" className="rounded-full" asChild>
-          <Link href={isSignedIn ? "/dashboard" : "/sign-up"}>Get Started</Link>
+          <Link prefetch href={isSignedIn ? "/dashboard" : "/sign-up"}>
+            Get Started
+          </Link>
         </Button>
 
         <Button className="rounded-full" asChild>
