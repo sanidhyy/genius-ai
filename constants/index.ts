@@ -17,6 +17,31 @@ import {
 
 export const MAX_FREE_COUNTS = 5 as const;
 
+export const OPENAI_KEY_HEADER = "x-openai-key" as const;
+export const REPLICATE_TOKEN_HEADER = "x-replicate-token" as const;
+
+export const IMAGE_RESOLUTION_VALUES = [
+  "1536x1024",
+  "1024x1536",
+  "1792x1024",
+  "1024x1792",
+] as const;
+
+export const IMAGE_RESOLUTIONS = IMAGE_RESOLUTION_VALUES.map((value) => ({
+  value,
+  label: value.replace("x", "×"),
+}));
+
+export type ImageResolution = (typeof IMAGE_RESOLUTION_VALUES)[number];
+
+export const DEFAULT_IMAGE_RESOLUTION: ImageResolution = "1536x1024";
+
+export const isImageResolution = (
+  value: unknown,
+): value is ImageResolution =>
+  typeof value === "string" &&
+  (IMAGE_RESOLUTION_VALUES as readonly string[]).includes(value);
+
 export const TESTIMONIALS = [
   {
     name: "Carlos",

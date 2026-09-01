@@ -1,5 +1,6 @@
 import type { PropsWithChildren } from "react";
 
+import { ApiKeysHydrator } from "@/components/api-keys-hydrator";
 import { Navbar } from "@/components/navbar";
 import { Sidebar } from "@/components/sidebar";
 import { getApiLimitCount } from "@/lib/api-limit";
@@ -16,6 +17,7 @@ const DashboardLayout = async ({ children }: PropsWithChildren) => {
       </div>
 
       <main className="md:md:pl-72">
+        <ApiKeysHydrator />
         <Navbar />
         {children}
       </main>
