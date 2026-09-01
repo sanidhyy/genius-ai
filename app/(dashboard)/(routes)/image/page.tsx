@@ -24,7 +24,7 @@ import {
   SelectValue,
 } from "@/components/ui/select";
 import { DEFAULT_IMAGE_RESOLUTION, IMAGE_RESOLUTIONS } from "@/constants";
-import { getApiKeyHeaders, handleGenerationError } from "@/hooks/use-api-keys";
+import { handleGenerationError } from "@/hooks/use-api-keys";
 import { useProModal } from "@/hooks/use-pro-modal";
 import { imageFormSchema } from "@/schemas";
 import { OpenAI } from "openai";
@@ -92,9 +92,7 @@ const ImagePage = () => {
       setImages([]);
       setPreviewResolution(values.resolution);
 
-      const response = await axios.post("/api/image", values, {
-        headers: getApiKeyHeaders(),
-      });
+      const response = await axios.post("/api/image", values);
 
       const urls = (response.data as OpenAI.Images.Image[])
         .map((image) =>

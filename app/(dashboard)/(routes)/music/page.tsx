@@ -14,7 +14,7 @@ import { Loader } from "@/components/loader";
 import { Button } from "@/components/ui/button";
 import { Form, FormControl, FormField, FormItem } from "@/components/ui/form";
 import { Input } from "@/components/ui/input";
-import { getApiKeyHeaders, handleGenerationError } from "@/hooks/use-api-keys";
+import { handleGenerationError } from "@/hooks/use-api-keys";
 import { useProModal } from "@/hooks/use-pro-modal";
 import { musicFormSchema } from "@/schemas";
 
@@ -36,9 +36,7 @@ const MusicPage = () => {
     try {
       setMusic(undefined);
 
-      const response = await axios.post("/api/music", values, {
-        headers: getApiKeyHeaders(),
-      });
+      const response = await axios.post("/api/music", values);
 
       setMusic(response.data.audio);
     } catch (error: unknown) {

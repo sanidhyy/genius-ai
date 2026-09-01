@@ -17,9 +17,6 @@ import {
 
 export const MAX_FREE_COUNTS = 5 as const;
 
-export const OPENAI_KEY_HEADER = "x-openai-key" as const;
-export const REPLICATE_TOKEN_HEADER = "x-replicate-token" as const;
-
 export const IMAGE_RESOLUTION_VALUES = [
   "1536x1024",
   "1024x1536",

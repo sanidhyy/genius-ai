@@ -19,7 +19,7 @@ import { UserAvatar } from "@/components/user-avatar";
 import { Button } from "@/components/ui/button";
 import { Form, FormControl, FormField, FormItem } from "@/components/ui/form";
 import { Input } from "@/components/ui/input";
-import { getApiKeyHeaders, handleGenerationError } from "@/hooks/use-api-keys";
+import { handleGenerationError } from "@/hooks/use-api-keys";
 import { useProModal } from "@/hooks/use-pro-modal";
 import { cn } from "@/lib/utils";
 import { conversationFormSchema } from "@/schemas";
@@ -49,15 +49,9 @@ const ConversationPage = () => {
 
       const newMessages = [...messages, userMessage];
 
-      const response = await axios.post(
-        "/api/conversation",
-        {
-          messages: newMessages,
-        },
-        {
-          headers: getApiKeyHeaders(),
-        },
-      );
+      const response = await axios.post("/api/conversation", {
+        messages: newMessages,
+      });
 
       setMessages((current) => [...current, userMessage, response.data]);
     } catch (error: unknown) {
