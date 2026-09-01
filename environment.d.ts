@@ -11,6 +11,9 @@ declare global {
       STRIPE_API_SECRET_KEY: string;
       STRIPE_WEBHOOK_SECRET: string;
 
+      // encryption secret for API key cookies
+      ENCRYPTION_SECRET: string;
+
       // app base url
       NEXT_PUBLIC_APP_URL: string;
 
