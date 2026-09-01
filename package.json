@@ -10,6 +10,7 @@
     "build": "next build",
     "start": "next start",
     "lint": "eslint .",
+    "db:studio": "prisma studio",
     "db:generate": "prisma generate",
     "db:push": "prisma db push",
     "postinstall": "pnpm run db:generate"
@@ -24,6 +25,7 @@
     "@radix-ui/react-label": "^2.1.8",
     "@radix-ui/react-progress": "^1.1.8",
     "@radix-ui/react-select": "^2.2.6",
+    "@radix-ui/react-separator": "^1.1.15",
     "@radix-ui/react-slot": "^1.2.4",
     "axios": "^1.13.5",
     "class-variance-authority": "^0.7.1",
