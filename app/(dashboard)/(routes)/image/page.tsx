@@ -7,7 +7,6 @@ import Image from "next/image";
 import { useRouter } from "next/navigation";
 import { useState } from "react";
 import { useForm } from "react-hook-form";
-import { toast } from "sonner";
 import * as z from "zod";
 
 import { Empty } from "@/components/empty";
@@ -24,8 +23,11 @@ import {
   SelectTrigger,
   SelectValue,
 } from "@/components/ui/select";
+import { DEFAULT_IMAGE_RESOLUTION, IMAGE_RESOLUTIONS } from "@/constants";
+import { getApiKeyHeaders, handleGenerationError } from "@/hooks/use-api-keys";
 import { useProModal } from "@/hooks/use-pro-modal";
 import { imageFormSchema } from "@/schemas";
+import { OpenAI } from "openai";
 
 const amountOptions = [
   {
@@ -50,32 +52,36 @@ const amountOptions = [
   },
 ];
 
-const resolutionOptions = [
-  {
-    value: "256x256",
-    label: "256x256",
-  },
-  {
-    value: "512x512",
-    label: "512x512",
-  },
-  {
-    value: "1024x1024",
-    label: "1024x1024",
-  },
-];
+const resolutionOptions = IMAGE_RESOLUTIONS;
+
+const downloadImage = async (src: string, index: number) => {
+  const response = await fetch(src);
+  const blob = await response.blob();
+  const objectUrl = URL.createObjectURL(blob);
+
+  const link = document.createElement("a");
+  link.href = objectUrl;
+  link.download = `genius-image-${index + 1}.png`;
+  document.body.appendChild(link);
+  link.click();
+  link.remove();
+  URL.revokeObjectURL(objectUrl);
+};
 
 const ImagePage = () => {
   const proModal = useProModal();
   const router = useRouter();
   const [images, setImages] = useState<string[]>([]);
+  const [previewResolution, setPreviewResolution] = useState(
+    DEFAULT_IMAGE_RESOLUTION,
+  );
 
   const form = useForm<z.infer<typeof imageFormSchema>>({
     resolver: zodResolver(imageFormSchema),
     defaultValues: {
       prompt: "",
       amount: "1",
-      resolution: "512x512",
+      resolution: DEFAULT_IMAGE_RESOLUTION,
     },
   });
 
@@ -84,16 +90,25 @@ const ImagePage = () => {
   const onSubmit = async (values: z.infer<typeof imageFormSchema>) => {
     try {
       setImages([]);
+      setPreviewResolution(values.resolution);
 
-      const response = await axios.post("/api/image", values);
+      const response = await axios.post("/api/image", values, {
+        headers: getApiKeyHeaders(),
+      });
 
-      const urls = response.data.map((image: { url: string }) => image.url);
+      const urls = (response.data as OpenAI.Images.Image[])
+        .map((image) =>
+          !!image.b64_json
+            ? `data:image/png;base64,${image.b64_json}`
+            : undefined,
+        )
+        .filter(Boolean) as string[];
 
       setImages(urls);
     } catch (error: unknown) {
-      if (axios.isAxiosError(error) && error?.response?.status === 403)
-        proModal.onOpen();
-      else toast.error("Something went wrong.");
+      handleGenerationError(error, proModal.onOpen, () =>
+        router.push("/settings"),
+      );
 
       console.error(error);
     } finally {
@@ -220,15 +235,21 @@ const ImagePage = () => {
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-4 mt-8">
             {images.map((src, i) => (
               <Card key={src} className="rounded-lg overflow-hidden">
-                <div className="relative aspect-square">
+                <div
+                  className="relative w-full"
+                  style={{
+                    aspectRatio: previewResolution.replace("x", " / "),
+                  }}
+                >
                   <Image src={src} alt={`Generated image ${i + 1}`} fill />
                 </div>
 
                 <CardFooter className="p-2">
                   <Button
+                    type="button"
                     variant="secondary"
                     className="w-full"
-                    onClick={() => window.open(src)}
+                    onClick={() => downloadImage(src, i)}
                   >
                     <Download className="h-4 w-4 mr-2" />
                     Download
