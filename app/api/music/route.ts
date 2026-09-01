@@ -2,12 +2,10 @@ import { auth } from "@clerk/nextjs/server";
 import { type NextRequest, NextResponse } from "next/server";
 import Replicate from "replicate";
 
+import { aiProviderErrorResponse } from "@/lib/ai-errors";
 import { increaseApiLimit, checkApiLimit } from "@/lib/api-limit";
+import { getReplicateToken } from "@/lib/provider-keys";
 import { checkSubscription } from "@/lib/subscription";
-
-const replicate = new Replicate({
-  auth: process.env.REPLICATE_API_TOKEN!,
-});
 
 export async function POST(req: NextRequest) {
   try {
@@ -18,6 +16,9 @@ export async function POST(req: NextRequest) {
 
     if (!userId) return new NextResponse("Unauthorized.", { status: 401 });
 
+    const replicateToken = getReplicateToken(req);
+    if ("error" in replicateToken) return replicateToken.error;
+
     if (!prompt)
       return new NextResponse("Prompt is required.", { status: 400 });
 
@@ -26,6 +27,10 @@ export async function POST(req: NextRequest) {
 
     if (!freeTrial && !isPro)
       return new NextResponse("Free trial has expired.", { status: 403 });
+
+    const replicate = new Replicate({
+      auth: replicateToken.token,
+    });
 
     const response = await replicate.run(
       "riffusion/riffusion:8cf61ea6c56afd61d8f5b9ffd14d7c216c0a93844ce2d82ac1c9ecc9c7f24e05",
@@ -40,7 +45,6 @@ export async function POST(req: NextRequest) {
 
     return NextResponse.json(response, { status: 200 });
   } catch (error: unknown) {
-    console.error("[MUSIC_ERROR]: ", error);
-    return new NextResponse("Internal server error.", { status: 500 });
+    return aiProviderErrorResponse(error, "[MUSIC_ERROR]", "replicate");
   }
 }

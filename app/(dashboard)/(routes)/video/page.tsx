@@ -6,7 +6,6 @@ import { VideoIcon } from "lucide-react";
 import { useRouter } from "next/navigation";
 import { useState } from "react";
 import { useForm } from "react-hook-form";
-import { toast } from "sonner";
 import * as z from "zod";
 
 import { Empty } from "@/components/empty";
@@ -15,6 +14,7 @@ import { Loader } from "@/components/loader";
 import { Button } from "@/components/ui/button";
 import { Form, FormControl, FormField, FormItem } from "@/components/ui/form";
 import { Input } from "@/components/ui/input";
+import { getApiKeyHeaders, handleGenerationError } from "@/hooks/use-api-keys";
 import { useProModal } from "@/hooks/use-pro-modal";
 import { videoFormSchema } from "@/schemas";
 
@@ -36,13 +36,15 @@ const VideoPage = () => {
     try {
       setVideo(undefined);
 
-      const response = await axios.post("/api/video", values);
+      const response = await axios.post("/api/video", values, {
+        headers: getApiKeyHeaders(),
+      });
 
       setVideo(response.data[0]);
     } catch (error: unknown) {
-      if (axios.isAxiosError(error) && error?.response?.status === 403)
-        proModal.onOpen();
-      else toast.error("Something went wrong.");
+      handleGenerationError(error, proModal.onOpen, () =>
+        router.push("/settings"),
+      );
 
       console.error(error);
     } finally {

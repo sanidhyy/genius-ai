@@ -9,7 +9,6 @@ import { useState } from "react";
 
 import { useForm } from "react-hook-form";
 import ReactMarkdown from "react-markdown";
-import { toast } from "sonner";
 import * as z from "zod";
 
 import { BotAvatar } from "@/components/bot-avatar";
@@ -20,6 +19,7 @@ import { UserAvatar } from "@/components/user-avatar";
 import { Button } from "@/components/ui/button";
 import { Form, FormControl, FormField, FormItem } from "@/components/ui/form";
 import { Input } from "@/components/ui/input";
+import { getApiKeyHeaders, handleGenerationError } from "@/hooks/use-api-keys";
 import { useProModal } from "@/hooks/use-pro-modal";
 import { cn } from "@/lib/utils";
 import { conversationFormSchema } from "@/schemas";
@@ -49,15 +49,21 @@ const ConversationPage = () => {
 
       const newMessages = [...messages, userMessage];
 
-      const response = await axios.post("/api/conversation", {
-        messages: newMessages,
-      });
+      const response = await axios.post(
+        "/api/conversation",
+        {
+          messages: newMessages,
+        },
+        {
+          headers: getApiKeyHeaders(),
+        },
+      );
 
       setMessages((current) => [...current, userMessage, response.data]);
     } catch (error: unknown) {
-      if (axios.isAxiosError(error) && error?.response?.status === 403)
-        proModal.onOpen();
-      else toast.error("Something went wrong.");
+      handleGenerationError(error, proModal.onOpen, () =>
+        router.push("/settings"),
+      );
 
       console.error(error);
     } finally {
