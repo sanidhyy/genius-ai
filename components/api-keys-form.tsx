@@ -29,26 +29,16 @@ import {
   FormMessage,
 } from "@/components/ui/form";
 import { Input } from "@/components/ui/input";
-import { useApiKeys } from "@/hooks/use-api-keys";
-import { useHydrated } from "@/hooks/use-hydrated";
 import { apiKeysFormSchema } from "@/schemas";
 import { Heading } from "./heading";
 
 export const ApiKeysForm = () => {
-  const isBrowserHydrated = useHydrated();
-  const openaiApiKey = useApiKeys((state) => state.openaiApiKey);
-  const replicateApiToken = useApiKeys((state) => state.replicateApiToken);
-  const hasHydrated = useApiKeys((state) => state.hasHydrated);
-  const setKeys = useApiKeys((state) => state.setKeys);
-  const clearKeys = useApiKeys((state) => state.clearKeys);
-
   const [openaiVisible, setOpenaiVisible] = useState(false);
   const [replicateVisible, setReplicateVisible] = useState(false);
   const [isRemoveOpen, setIsRemoveOpen] = useState(false);
   const [isRemoving, setIsRemoving] = useState(false);
-
-  const ready = isBrowserHydrated && hasHydrated;
-  const hasStoredKeys = Boolean(openaiApiKey || replicateApiToken);
+  const [hasLoaded, setHasLoaded] = useState(false);
+  const [hasStoredKeys, setHasStoredKeys] = useState(false);
 
   const form = useForm<z.infer<typeof apiKeysFormSchema>>({
     resolver: zodResolver(apiKeysFormSchema),
@@ -59,20 +49,34 @@ export const ApiKeysForm = () => {
   });
 
   useEffect(() => {
-    if (!ready) return;
+    const load = async () => {
+      try {
+        const { data } = await axios.get<{
+          openaiApiKey?: string;
+          replicateApiToken?: string;
+        }>("/api/settings/keys");
 
-    form.reset({
-      openaiApiKey,
-      replicateApiToken,
-    });
-  }, [form, openaiApiKey, ready, replicateApiToken]);
+        const openaiApiKey = data.openaiApiKey ?? "";
+        const replicateApiToken = data.replicateApiToken ?? "";
 
-  const isPending = form.formState.isSubmitting || isRemoving || !ready;
+        form.reset({ openaiApiKey, replicateApiToken });
+        setHasStoredKeys(Boolean(openaiApiKey || replicateApiToken));
+      } catch (error) {
+        console.error(error);
+      } finally {
+        setHasLoaded(true);
+      }
+    };
+
+    void load();
+  }, [form]);
+
+  const isPending = form.formState.isSubmitting || isRemoving || !hasLoaded;
 
   const onSubmit = async (values: z.infer<typeof apiKeysFormSchema>) => {
     try {
-      await axios.post("/api/settings/validate", values);
-      setKeys(values);
+      await axios.post("/api/settings/keys", values);
+      setHasStoredKeys(true);
       toast.success("API keys saved successfully!");
     } catch (error: unknown) {
       if (axios.isAxiosError(error) && error.response?.status === 400) {
@@ -90,23 +94,30 @@ export const ApiKeysForm = () => {
     }
   };
 
-  const onRemove = () => {
-    setIsRemoving(true);
-    clearKeys();
-    form.reset({
-      openaiApiKey: "",
-      replicateApiToken: "",
-    });
-    setIsRemoveOpen(false);
-    setIsRemoving(false);
-    toast.success("API keys removed successfully!");
+  const onRemove = async () => {
+    try {
+      setIsRemoving(true);
+      await axios.delete("/api/settings/keys");
+      form.reset({
+        openaiApiKey: "",
+        replicateApiToken: "",
+      });
+      setHasStoredKeys(false);
+      setIsRemoveOpen(false);
+      toast.success("API keys removed successfully!");
+    } catch (error) {
+      toast.error("Failed to remove API keys!");
+      console.error(error);
+    } finally {
+      setIsRemoving(false);
+    }
   };
 
   return (
     <>
       <Heading
         title="AI Settings"
-        description="Add your own OpenAI and Replicate keys to generate conversation, images, code, music, and video. Keys are encrypted and stored only in this browser."
+        description="Add your own OpenAI and Replicate keys to generate conversation, images, code, music, and video. Keys are automatically deleted after 30 days."
         icon={SparklesIcon}
         iconColor="text-gray-700"
         bgColor="bg-gray-700/10"
