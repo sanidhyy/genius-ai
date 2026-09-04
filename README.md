@@ -298,7 +298,7 @@ Useful resources and dependencies that are used in Genius.
 - [tailwindcss](https://www.npmjs.com/package/tailwindcss): ^4.3.3
 - [typescript](https://www.npmjs.com/package/typescript): ^6.0.3
 - [typewriter-effect](https://www.npmjs.com/package/typewriter-effect): ^2.22.0
-- [zod](https://www.npmjs.com/package/zod): ^4.3.6
+- [zod](https://www.npmjs.com/package/zod): ^4.5.4
 - [zustand](https://www.npmjs.com/package/zustand): ^5.0.11
 
 <!--- DEPENDENCIES_END --->
