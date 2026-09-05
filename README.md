@@ -283,13 +283,13 @@ Useful resources and dependencies that are used in Genius.
 - [eslint](https://www.npmjs.com/package/eslint): 9.39.5
 - [eslint-config-next](https://www.npmjs.com/package/eslint-config-next): 16.3.4
 - [lucide-react](https://www.npmjs.com/package/lucide-react): ^1.38.0
-- [next](https://www.npmjs.com/package/next): 16.3.3
+- [next](https://www.npmjs.com/package/next): 16.3.4
 - [openai](https://www.npmjs.com/package/openai): ^7.8.0
 - [postcss](https://www.npmjs.com/package/postcss): ^8
 - [prisma](https://www.npmjs.com/package/prisma): ^7.10.0
 - [react](https://www.npmjs.com/package/react): 19.2.8
 - [react-dom](https://www.npmjs.com/package/react-dom): 19.2.8
-- [react-hook-form](https://www.npmjs.com/package/react-hook-form): ^7.71.1
+- [react-hook-form](https://www.npmjs.com/package/react-hook-form): ^7.87.0
 - [react-markdown](https://www.npmjs.com/package/react-markdown): ^10.1.0
 - [replicate](https://www.npmjs.com/package/replicate): ^1.4.0
 - [sonner](https://www.npmjs.com/package/sonner): ^2.0.7
