@@ -272,7 +272,7 @@ Useful resources and dependencies that are used in Genius.
 - [@radix-ui/react-separator](https://www.npmjs.com/package/@radix-ui/react-separator): ^1.1.15
 - [@radix-ui/react-slot](https://www.npmjs.com/package/@radix-ui/react-slot): ^1.2.4
 - [@tailwindcss/postcss](https://www.npmjs.com/package/@tailwindcss/postcss): ^4.3.3
-- [@types/node](https://www.npmjs.com/package/@types/node): ^26.4.0
+- [@types/node](https://www.npmjs.com/package/@types/node): ^26.5.0
 - [@types/react](https://www.npmjs.com/package/@types/react): 19.2.18
 - [@types/react-dom](https://www.npmjs.com/package/@types/react-dom): 19.2.5
 - [axios](https://www.npmjs.com/package/axios): ^1.13.5
