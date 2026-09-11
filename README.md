@@ -1,8 +1,8 @@
 <a name="readme-top"></a>
 
-# Genius - A Modern Next.js 14 SaaS AI Platform.
+# Genius - A Modern Next.js 16 SaaS AI Platform.
 
-![Genius - A Modern Next.js 14 SaaS AI Platform.](/.github/images/img_main.png "Genius - A Modern Next.js 14 SaaS AI Platform.")
+![Genius - A Modern Next.js 16 SaaS AI Platform.](/.github/images/img_main.png "Genius - A Modern Next.js 16 SaaS AI Platform.")
 
 [![Ask Me Anything!](https://flat.badgen.net/static/Ask%20me/anything?icon=github&color=black&scale=1.01)](https://github.com/sanidhyy "Ask Me Anything!")
 [![GitHub license](https://flat.badgen.net/github/license/sanidhyy/genius-ai?icon=github&color=black&scale=1.01)](https://github.com/sanidhyy/genius-ai/blob/main/LICENSE "GitHub license")
