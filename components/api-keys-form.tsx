@@ -177,7 +177,7 @@ export const ApiKeysForm = () => {
                       href="https://platform.openai.com/api-keys"
                       target="_blank"
                       rel="noreferrer"
-                      className="underline underline-offset-1 hover:opacity-75"
+                      className="underline text-foreground underline-offset-2 hover:opacity-75"
                     >
                       OpenAI
                     </Link>
@@ -186,7 +186,7 @@ export const ApiKeysForm = () => {
                       href="https://platform.openai.com/settings/organization/billing/credit-grants"
                       target="_blank"
                       rel="noreferrer"
-                      className="underline underline-offset-1 hover:opacity-75"
+                      className="underline text-foreground underline-offset-2 hover:opacity-75"
                     >
                       credit grants
                     </Link>
@@ -243,7 +243,7 @@ export const ApiKeysForm = () => {
                       href="https://replicate.com/account/api-tokens"
                       target="_blank"
                       rel="noreferrer"
-                      className="underline underline-offset-1 hover:opacity-75"
+                      className="underline text-foreground underline-offset-2 hover:opacity-75"
                     >
                       Replicate
                     </Link>

@@ -41,15 +41,19 @@ export const apiKeysFormSchema = z
       .trim()
       .refine(
         (value) =>
-          value === "" || (value.startsWith("sk-") && value.length >= 12),
+          value === "" || (value.startsWith("sk-proj-") && value.length >= 12),
         { message: "Invalid API key!" },
       ),
     replicateApiToken: z
       .string()
       .trim()
-      .refine((value) => value === "" || value.length >= 8, {
-        message: "Invalid API token!",
-      }),
+      .refine(
+        (value) =>
+          value === "" || (value.startsWith("r8_") && value.length >= 8),
+        {
+          message: "Invalid API token!",
+        },
+      ),
   })
   .refine(
     (data) => data.openaiApiKey.length > 0 || data.replicateApiToken.length > 0,
