@@ -8,9 +8,9 @@ const KEY_LENGTH = 32;
 const ITERATIONS = 100_000;
 
 const getEncryptionSecret = () => {
-  const secret = process.env.ENCRYPTION_SECRET;
+  const secret = process.env.VERIFICATION_SECRET;
 
-  if (!secret) throw new Error("ENCRYPTION_SECRET is not configured.");
+  if (!secret) throw new Error("VERIFICATION_SECRET is not configured.");
 
   return secret;
 };

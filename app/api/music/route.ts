@@ -16,7 +16,7 @@ export async function POST(req: NextRequest) {
 
     if (!userId) return new NextResponse("Unauthorized.", { status: 401 });
 
-    const replicateToken = getReplicateToken(req, userId);
+    const replicateToken = await getReplicateToken();
     if ("error" in replicateToken) return replicateToken.error;
 
     if (!prompt)

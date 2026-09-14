@@ -21,7 +21,7 @@ export async function POST(req: NextRequest) {
 
     if (!userId) return new NextResponse("Unauthorized.", { status: 401 });
 
-    const openaiKey = getOpenAIKey(req, userId);
+    const openaiKey = await getOpenAIKey();
     if ("error" in openaiKey) return openaiKey.error;
 
     if (!prompt)

@@ -3,11 +3,15 @@ import { Settings } from "lucide-react";
 import { ApiKeysForm } from "@/components/api-keys-form";
 import { Heading } from "@/components/heading";
 import { SubscriptionButton } from "@/components/subscription-button";
-import { checkSubscription } from "@/lib/subscription";
 import { Separator } from "@/components/ui/separator";
+import { checkSubscription } from "@/lib/subscription";
+import { getUserApiKeys } from "@/lib/user-api-keys";
 
 const SettingsPage = async () => {
-  const isPro = await checkSubscription();
+  const [isPro, apiKeys] = await Promise.all([
+    checkSubscription(),
+    getUserApiKeys(),
+  ]);
 
   return (
     <div>
@@ -31,7 +35,12 @@ const SettingsPage = async () => {
 
       <Separator className="my-6" />
 
-      <ApiKeysForm />
+      <ApiKeysForm
+        initialValues={{
+          openaiApiKey: apiKeys?.openaiApiKey ?? "",
+          replicateApiToken: apiKeys?.replicateApiToken ?? "",
+        }}
+      />
     </div>
   );
 };

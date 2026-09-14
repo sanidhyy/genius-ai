@@ -3,25 +3,8 @@ import { type NextRequest, NextResponse } from "next/server";
 import OpenAI from "openai";
 
 import { getAISettingsErrorMessage } from "@/lib/ai-errors";
-import {
-  clearStoredApiKeys,
-  getStoredApiKeys,
-  setStoredApiKeys,
-} from "@/lib/api-key-cookies";
+import { clearUserApiKeys, setUserApiKeys } from "@/lib/user-api-keys";
 import { apiKeysFormSchema } from "@/schemas";
-
-export async function GET() {
-  try {
-    const { userId } = await auth();
-    if (!userId) return new NextResponse("Unauthorized.", { status: 401 });
-
-    const keys = await getStoredApiKeys(userId);
-    return NextResponse.json(keys, { status: 200 });
-  } catch (error: unknown) {
-    console.error("[SETTINGS_KEYS_GET_ERROR]: ", error);
-    return new NextResponse("Internal server error.", { status: 500 });
-  }
-}
 
 export async function POST(req: NextRequest) {
   try {
@@ -77,11 +60,11 @@ export async function POST(req: NextRequest) {
       }
     }
 
-    await setStoredApiKeys(userId, { openaiApiKey, replicateApiToken });
+    await setUserApiKeys({ openaiApiKey, replicateApiToken });
 
     return new NextResponse(null, { status: 204 });
   } catch (error: unknown) {
-    console.error("[SETTINGS_KEYS_POST_ERROR]: ", error);
+    console.error("[API_KEYS_POST]: ", error);
     return new NextResponse("Internal server error.", { status: 500 });
   }
 }
@@ -91,10 +74,10 @@ export async function DELETE() {
     const { userId } = await auth();
     if (!userId) return new NextResponse("Unauthorized.", { status: 401 });
 
-    await clearStoredApiKeys(userId);
+    await clearUserApiKeys();
     return new NextResponse(null, { status: 204 });
   } catch (error: unknown) {
-    console.error("[SETTINGS_KEYS_DELETE_ERROR]: ", error);
+    console.error("[API_KEYS_DELETE]: ", error);
     return new NextResponse("Internal server error.", { status: 500 });
   }
 }

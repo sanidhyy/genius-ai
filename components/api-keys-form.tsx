@@ -1,7 +1,8 @@
 "use client";
 
-import { useEffect, useState } from "react";
+import { useState } from "react";
 import Link from "next/link";
+import { useRouter } from "next/navigation";
 
 import { zodResolver } from "@hookform/resolvers/zod";
 import axios from "axios";
@@ -32,52 +33,37 @@ import { Input } from "@/components/ui/input";
 import { apiKeysFormSchema } from "@/schemas";
 import { Heading } from "./heading";
 
-export const ApiKeysForm = () => {
+type ApiKeysFormValues = z.infer<typeof apiKeysFormSchema>;
+
+type ApiKeysFormProps = {
+  initialValues: ApiKeysFormValues;
+};
+
+export const ApiKeysForm = ({ initialValues }: ApiKeysFormProps) => {
+  const router = useRouter();
   const [openaiVisible, setOpenaiVisible] = useState(false);
   const [replicateVisible, setReplicateVisible] = useState(false);
   const [isRemoveOpen, setIsRemoveOpen] = useState(false);
   const [isRemoving, setIsRemoving] = useState(false);
-  const [hasLoaded, setHasLoaded] = useState(false);
-  const [hasStoredKeys, setHasStoredKeys] = useState(false);
 
-  const form = useForm<z.infer<typeof apiKeysFormSchema>>({
+  const form = useForm<ApiKeysFormValues>({
     resolver: zodResolver(apiKeysFormSchema),
     defaultValues: {
-      openaiApiKey: "",
-      replicateApiToken: "",
+      openaiApiKey: initialValues.openaiApiKey ?? "",
+      replicateApiToken: initialValues.replicateApiToken ?? "",
     },
   });
 
-  useEffect(() => {
-    const load = async () => {
-      try {
-        const { data } = await axios.get<{
-          openaiApiKey?: string;
-          replicateApiToken?: string;
-        }>("/api/settings/keys");
+  const isPending = form.formState.isSubmitting || isRemoving;
+  const hasSavedKeys = Object.values(initialValues).some(
+    (value) => value.trim().length > 0,
+  );
 
-        const openaiApiKey = data.openaiApiKey ?? "";
-        const replicateApiToken = data.replicateApiToken ?? "";
-
-        form.reset({ openaiApiKey, replicateApiToken });
-        setHasStoredKeys(Boolean(openaiApiKey || replicateApiToken));
-      } catch (error) {
-        console.error(error);
-      } finally {
-        setHasLoaded(true);
-      }
-    };
-
-    void load();
-  }, [form]);
-
-  const isPending = form.formState.isSubmitting || isRemoving || !hasLoaded;
-
-  const onSubmit = async (values: z.infer<typeof apiKeysFormSchema>) => {
+  const onSubmit = async (values: ApiKeysFormValues) => {
     try {
-      await axios.post("/api/settings/keys", values);
-      setHasStoredKeys(true);
+      await axios.post("/api/settings/api-keys", values);
       toast.success("API keys saved successfully!");
+      router.refresh();
     } catch (error: unknown) {
       if (axios.isAxiosError(error) && error.response?.status === 400) {
         const data = error.response.data;
@@ -97,14 +83,14 @@ export const ApiKeysForm = () => {
   const onRemove = async () => {
     try {
       setIsRemoving(true);
-      await axios.delete("/api/settings/keys");
+      await axios.delete("/api/settings/api-keys");
       form.reset({
         openaiApiKey: "",
         replicateApiToken: "",
       });
-      setHasStoredKeys(false);
       setIsRemoveOpen(false);
       toast.success("API keys removed successfully!");
+      router.refresh();
     } catch (error) {
       toast.error("Failed to remove API keys!");
       console.error(error);
@@ -255,7 +241,7 @@ export const ApiKeysForm = () => {
             />
 
             <div className="flex flex-col-reverse gap-2 sm:flex-row sm:justify-end">
-              {hasStoredKeys && (
+              {hasSavedKeys && (
                 <Button
                   type="button"
                   variant="destructive"

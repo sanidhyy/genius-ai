@@ -1,12 +1,10 @@
-import { type NextRequest, NextResponse } from "next/server";
+import { NextResponse } from "next/server";
 
-import {
-  getOpenAIKeyFromRequest,
-  getReplicateTokenFromRequest,
-} from "@/lib/api-key-cookies";
+import { getUserApiKeys } from "@/lib/user-api-keys";
 
-export const getOpenAIKey = (req: NextRequest, userId: string) => {
-  const key = getOpenAIKeyFromRequest(req, userId);
+export const getOpenAIKey = async () => {
+  const keys = await getUserApiKeys();
+  const key = keys?.openaiApiKey.trim() ?? "";
 
   if (!key) {
     return {
@@ -20,8 +18,9 @@ export const getOpenAIKey = (req: NextRequest, userId: string) => {
   return { key } as const;
 };
 
-export const getReplicateToken = (req: NextRequest, userId: string) => {
-  const token = getReplicateTokenFromRequest(req, userId);
+export const getReplicateToken = async () => {
+  const keys = await getUserApiKeys();
+  const token = keys?.replicateApiToken.trim() ?? "";
 
   if (!token) {
     return {
