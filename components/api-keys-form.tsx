@@ -160,7 +160,7 @@ export const ApiKeysForm = ({ initialValues }: ApiKeysFormProps) => {
                   <FormDescription>
                     Get your API Key from{" "}
                     <Link
-                      href="https://platform.openai.com/api-keys"
+                      href="https://platform.openai.com/account/api-keys"
                       target="_blank"
                       rel="noreferrer"
                       className="underline text-foreground underline-offset-2 hover:opacity-75"
