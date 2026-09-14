@@ -55,8 +55,6 @@ export async function POST(req: NextRequest) {
 
     if (!isPro) await increaseApiLimit();
 
-    console.log({ responseData: response.data });
-
     return NextResponse.json(response.data, { status: 200 });
   } catch (error: unknown) {
     return aiProviderErrorResponse(error, "[IMAGE_ERROR]");

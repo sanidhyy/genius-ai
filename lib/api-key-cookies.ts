@@ -2,7 +2,6 @@ import { cookies } from "next/headers";
 import type { NextRequest } from "next/server";
 
 import { decrypt, encrypt } from "@/lib/encryption";
-import { absoluteUrl } from "@/lib/utils";
 
 export const API_KEY_COOKIE_MAX_AGE = 60 * 60 * 24 * 30;
 
@@ -10,12 +9,12 @@ const OPENAI_COOKIE = "genius-openai-key";
 const REPLICATE_COOKIE = "genius-replicate-token";
 
 export const getSecureCookieName = (cookieName: string) => {
-  const isSecure = absoluteUrl("").startsWith("https://");
+  const isSecure = process.env.NODE_ENV === "production";
   return isSecure ? `__Secure-${cookieName}` : cookieName;
 };
 
 const cookieOptions = () => {
-  const isSecure = absoluteUrl("").startsWith("https://");
+  const isSecure = process.env.NODE_ENV === "production";
 
   return {
     httpOnly: true,
