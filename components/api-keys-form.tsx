@@ -141,7 +141,7 @@ export const ApiKeysForm = () => {
                     <FormControl>
                       <Input
                         type={openaiVisible ? "text" : "password"}
-                        placeholder="sk-proj-•••••••••••••••••••••••••••••••"
+                        placeholder="sk-•••••••••••••••••••••••••••••••••••"
                         disabled={isPending}
                         aria-disabled={isPending}
                         className="pr-10 focus-visible:ring-offset-0"

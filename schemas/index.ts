@@ -41,7 +41,7 @@ export const apiKeysFormSchema = z
       .trim()
       .refine(
         (value) =>
-          value === "" || (value.startsWith("sk-proj-") && value.length >= 12),
+          value === "" || (value.startsWith("sk-") && value.length >= 12),
         { message: "Invalid API key!" },
       ),
     replicateApiToken: z
