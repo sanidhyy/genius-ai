@@ -55,8 +55,8 @@ importers:
         specifier: ^2.1.1
         version: 2.1.1
       crisp-sdk-web:
-        specifier: ^1.0.27
-        version: 1.2.0
+        specifier: ^1.2.1
+        version: 1.2.1
       dotenv:
         specifier: ^17.4.2
         version: 17.4.2
@@ -1789,8 +1789,8 @@ packages:
   convert-source-map@2.0.0:
     resolution: {integrity: sha512-Kvp459HrV2FEJ1CAsi1Ku+MY3kasH19TFykTz2xWmMeq6bk2NU3XXvfJ+Q61m0xktWwt+1HSYf3JZsTms3aRJg==}
 
-  crisp-sdk-web@1.2.0:
-    resolution: {integrity: sha512-R7hMEcm8vAOeJtx0odVtXfTQzgwObHCN+1affxDp82ajhm31fjsx6n/ruBnEHgESKv8719BBX5y+vQQKayEO2Q==}
+  crisp-sdk-web@1.2.1:
+    resolution: {integrity: sha512-tp62o82QktRiaGqFQLuRNRwndN/+VIY/mOQVeKnA2nKHn9wTFAzdRXTT5pBbxgLKcvT5uryfd9eL/u7s1N7yEA==}
 
   cross-spawn@7.0.6:
     resolution: {integrity: sha512-uV2QOWP2nWzsy2aMp8aRibhi9dlzF5Hgh5SHaB9OiTGEyDTiJJyx0uy51QXdyWbtAHNua4XJzUKca3OzKUd3vA==}
@@ -5155,7 +5155,7 @@ snapshots:
 
   convert-source-map@2.0.0: {}
 
-  crisp-sdk-web@1.2.0: {}
+  crisp-sdk-web@1.2.1: {}
 
   cross-spawn@7.0.6:
     dependencies:
