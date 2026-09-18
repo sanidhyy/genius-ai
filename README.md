@@ -262,7 +262,7 @@ Useful resources and dependencies that are used in Genius.
 
 - Thanks to CodeWithAntonio: https://codewithantonio.com/
 <!--- DEPENDENCIES_START --->
-- [@clerk/nextjs](https://www.npmjs.com/package/@clerk/nextjs): ^7.8.3
+- [@clerk/nextjs](https://www.npmjs.com/package/@clerk/nextjs): ^7.9.2
 - [@hookform/resolvers](https://www.npmjs.com/package/@hookform/resolvers): ^5.9.1
 - [@prisma/adapter-mariadb](https://www.npmjs.com/package/@prisma/adapter-mariadb): ^7.10.0
 - [@prisma/client](https://www.npmjs.com/package/@prisma/client): ^7.10.0
@@ -283,7 +283,7 @@ Useful resources and dependencies that are used in Genius.
 - [crisp-sdk-web](https://www.npmjs.com/package/crisp-sdk-web): ^1.2.1
 - [dotenv](https://www.npmjs.com/package/dotenv): ^17.4.2
 - [eslint](https://www.npmjs.com/package/eslint): 9.39.5
-- [eslint-config-next](https://www.npmjs.com/package/eslint-config-next): 16.3.4
+- [eslint-config-next](https://www.npmjs.com/package/eslint-config-next): 16.3.5
 - [lucide-react](https://www.npmjs.com/package/lucide-react): ^1.46.0
 - [next](https://www.npmjs.com/package/next): 16.3.4
 - [openai](https://www.npmjs.com/package/openai): ^7.8.0
