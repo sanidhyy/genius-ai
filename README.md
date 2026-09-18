@@ -285,7 +285,7 @@ Useful resources and dependencies that are used in Genius.
 - [eslint](https://www.npmjs.com/package/eslint): 9.39.5
 - [eslint-config-next](https://www.npmjs.com/package/eslint-config-next): 16.3.5
 - [lucide-react](https://www.npmjs.com/package/lucide-react): ^1.46.0
-- [next](https://www.npmjs.com/package/next): 16.3.4
+- [next](https://www.npmjs.com/package/next): 16.3.5
 - [openai](https://www.npmjs.com/package/openai): ^7.8.0
 - [postcss](https://www.npmjs.com/package/postcss): ^8
 - [prisma](https://www.npmjs.com/package/prisma): ^7.10.0
