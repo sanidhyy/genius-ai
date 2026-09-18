@@ -280,7 +280,7 @@ Useful resources and dependencies that are used in Genius.
 - [axios](https://www.npmjs.com/package/axios): ^1.13.5
 - [class-variance-authority](https://www.npmjs.com/package/class-variance-authority): ^0.7.1
 - [clsx](https://www.npmjs.com/package/clsx): ^2.1.1
-- [crisp-sdk-web](https://www.npmjs.com/package/crisp-sdk-web): ^1.0.27
+- [crisp-sdk-web](https://www.npmjs.com/package/crisp-sdk-web): ^1.2.1
 - [dotenv](https://www.npmjs.com/package/dotenv): ^17.4.2
 - [eslint](https://www.npmjs.com/package/eslint): 9.39.5
 - [eslint-config-next](https://www.npmjs.com/package/eslint-config-next): 16.3.4
