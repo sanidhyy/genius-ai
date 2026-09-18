@@ -39,7 +39,7 @@
     "replicate": "^1.4.0",
     "sonner": "^2.0.7",
     "stripe": "^22.6.0",
-    "tailwind-merge": "^3.6.0",
+    "tailwind-merge": "^3.7.0",
     "typewriter-effect": "^2.22.0",
     "zod": "^4.6.5",
     "zustand": "^5.0.11"
