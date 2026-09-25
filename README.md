@@ -281,7 +281,7 @@ Useful resources and dependencies that are used in Genius.
 - [class-variance-authority](https://www.npmjs.com/package/class-variance-authority): ^0.7.1
 - [clsx](https://www.npmjs.com/package/clsx): ^2.1.1
 - [crisp-sdk-web](https://www.npmjs.com/package/crisp-sdk-web): ^1.2.1
-- [dotenv](https://www.npmjs.com/package/dotenv): ^17.4.2
+- [dotenv](https://www.npmjs.com/package/dotenv): ^18.0.2
 - [eslint](https://www.npmjs.com/package/eslint): 9.39.5
 - [eslint-config-next](https://www.npmjs.com/package/eslint-config-next): 16.3.5
 - [lucide-react](https://www.npmjs.com/package/lucide-react): ^1.46.0
