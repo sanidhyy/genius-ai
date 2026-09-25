@@ -291,7 +291,7 @@ Useful resources and dependencies that are used in Genius.
 - [prisma](https://www.npmjs.com/package/prisma): ^7.10.0
 - [react](https://www.npmjs.com/package/react): 19.3.0
 - [react-dom](https://www.npmjs.com/package/react-dom): 19.3.0
-- [react-hook-form](https://www.npmjs.com/package/react-hook-form): ^7.87.0
+- [react-hook-form](https://www.npmjs.com/package/react-hook-form): ^7.88.0
 - [react-markdown](https://www.npmjs.com/package/react-markdown): ^10.1.0
 - [replicate](https://www.npmjs.com/package/replicate): ^1.4.0
 - [sonner](https://www.npmjs.com/package/sonner): ^2.0.7
