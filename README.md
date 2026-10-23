@@ -265,7 +265,7 @@ Useful resources and dependencies that are used in Genius.
 - [@clerk/nextjs](https://www.npmjs.com/package/@clerk/nextjs): ^7.9.11
 - [@hookform/resolvers](https://www.npmjs.com/package/@hookform/resolvers): ^6.0.0
 - [@prisma/adapter-mariadb](https://www.npmjs.com/package/@prisma/adapter-mariadb): ^7.10.0
-- [@prisma/client](https://www.npmjs.com/package/@prisma/client): ^7.10.0
+- [@prisma/client](https://www.npmjs.com/package/@prisma/client): ^7.10.1
 - [@radix-ui/react-avatar](https://www.npmjs.com/package/@radix-ui/react-avatar): ^1.3.1
 - [@radix-ui/react-dialog](https://www.npmjs.com/package/@radix-ui/react-dialog): ^1.3.1
 - [@radix-ui/react-label](https://www.npmjs.com/package/@radix-ui/react-label): ^2.1.8
