@@ -41,7 +41,7 @@
     "stripe": "^22.6.2",
     "tailwind-merge": "^3.7.0",
     "typewriter-effect": "^2.22.0",
-    "zod": "^4.6.5",
+    "zod": "^4.6.6",
     "zustand": "^5.0.11"
   },
   "devDependencies": {
