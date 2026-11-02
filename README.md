@@ -275,8 +275,8 @@ Useful resources and dependencies that are used in Genius.
 - [@radix-ui/react-slot](https://www.npmjs.com/package/@radix-ui/react-slot): ^1.2.4
 - [@tailwindcss/postcss](https://www.npmjs.com/package/@tailwindcss/postcss): ^4.3.3
 - [@types/node](https://www.npmjs.com/package/@types/node): ^26.6.5
-- [@types/react](https://www.npmjs.com/package/@types/react): 19.3.0
-- [@types/react-dom](https://www.npmjs.com/package/@types/react-dom): 19.3.0
+- [@types/react](https://www.npmjs.com/package/@types/react): ^19
+- [@types/react-dom](https://www.npmjs.com/package/@types/react-dom): ^19
 - [axios](https://www.npmjs.com/package/axios): ^1.13.5
 - [class-variance-authority](https://www.npmjs.com/package/class-variance-authority): ^0.7.1
 - [clsx](https://www.npmjs.com/package/clsx): ^2.1.1
@@ -289,8 +289,8 @@ Useful resources and dependencies that are used in Genius.
 - [openai](https://www.npmjs.com/package/openai): ^7.8.0
 - [postcss](https://www.npmjs.com/package/postcss): ^8
 - [prisma](https://www.npmjs.com/package/prisma): ^7.10.0
-- [react](https://www.npmjs.com/package/react): 19.3.0
-- [react-dom](https://www.npmjs.com/package/react-dom): 19.3.0
+- [react](https://www.npmjs.com/package/react): 19.3.1
+- [react-dom](https://www.npmjs.com/package/react-dom): 19.3.1
 - [react-hook-form](https://www.npmjs.com/package/react-hook-form): ^7.91.0
 - [react-markdown](https://www.npmjs.com/package/react-markdown): ^10.1.0
 - [replicate](https://www.npmjs.com/package/replicate): ^1.4.0
