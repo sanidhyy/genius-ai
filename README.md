@@ -297,7 +297,7 @@ Useful resources and dependencies that are used in Genius.
 - [sonner](https://www.npmjs.com/package/sonner): ^2.0.7
 - [stripe](https://www.npmjs.com/package/stripe): ^22.6.2
 - [tailwind-merge](https://www.npmjs.com/package/tailwind-merge): ^3.7.0
-- [tailwindcss](https://www.npmjs.com/package/tailwindcss): ^4.3.3
+- [tailwindcss](https://www.npmjs.com/package/tailwindcss): ^4.3.4
 - [typescript](https://www.npmjs.com/package/typescript): ^6.0.3
 - [typewriter-effect](https://www.npmjs.com/package/typewriter-effect): ^2.22.0
 - [zod](https://www.npmjs.com/package/zod): ^4.6.7
