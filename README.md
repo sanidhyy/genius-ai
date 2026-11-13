@@ -262,7 +262,7 @@ Useful resources and dependencies that are used in Genius.
 
 - Thanks to CodeWithAntonio: https://codewithantonio.com/
 <!--- DEPENDENCIES_START --->
-- [@clerk/nextjs](https://www.npmjs.com/package/@clerk/nextjs): ^7.9.11
+- [@clerk/nextjs](https://www.npmjs.com/package/@clerk/nextjs): ^7.9.25
 - [@hookform/resolvers](https://www.npmjs.com/package/@hookform/resolvers): ^6.0.0
 - [@prisma/adapter-mariadb](https://www.npmjs.com/package/@prisma/adapter-mariadb): ^7.10.1
 - [@prisma/client](https://www.npmjs.com/package/@prisma/client): ^7.10.1
