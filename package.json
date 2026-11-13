@@ -13,7 +13,7 @@
     "postinstall": "pnpm run db:generate"
   },
   "dependencies": {
-    "@clerk/nextjs": "^7.9.11",
+    "@clerk/nextjs": "^7.9.25",
     "@hookform/resolvers": "^6.0.0",
     "@prisma/adapter-mariadb": "^7.10.1",
     "@prisma/client": "^7.10.1",
