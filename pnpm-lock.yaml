@@ -94,8 +94,8 @@ importers:
         specifier: ^3.7.0
         version: 3.7.0
       typewriter-effect:
-        specifier: ^2.22.0
-        version: 2.22.0(react-dom@19.3.1(react@19.3.1))(react@19.3.1)
+        specifier: ^3.3.0
+        version: 3.3.0(react-dom@19.3.1(react@19.3.1))(react@19.3.1)
       zod:
         specifier: ^4.6.7
         version: 4.6.7
@@ -3010,9 +3010,6 @@ packages:
   perfect-debounce@2.1.0:
     resolution: {integrity: sha512-LjgdTytVFXeUgtHZr9WYViYSM/g8MkcTPYDlPa3cDqMirHjKiSZPYd6DoL7pK8AJQr+uWkQvCjHNdiMqsrJs+g==}
 
-  performance-now@2.1.0:
-    resolution: {integrity: sha512-7EAHlyLHI56VEIdK57uwHdHKIaAGbnXPiw0yWbarQZOKaKpvUIgW0jWRVLiatnM+XXlSwsanIBH/hzGMJulMow==}
-
   picocolors@1.1.1:
     resolution: {integrity: sha512-xceH2snhtb5M9liqDsmEw56le376mTZkEX/jEb/RxNFyegNul7eNslCXP9FDj/Lcu0X8KEyMceP2ntpaHrDEVA==}
 
@@ -3086,9 +3083,6 @@ packages:
 
   queue-microtask@1.2.3:
     resolution: {integrity: sha512-NuaNSa6flKT5JaSYQzJok04JzTL1CA6aGhv5rfLW3PgqA+M2ChpZQnAC8h8i4ZFkBS8X5RqkDBHA7r4hej3K9A==}
-
-  raf@3.4.1:
-    resolution: {integrity: sha512-Sq4CW4QhwOHE8ucn6J34MqtZCeWFP2aQSmrlroYgqAV1PjStIhJXxYuTgUIfkEk7zTLjmIjLmU5q+fbD1NnOJA==}
 
   rc9@3.1.0:
     resolution: {integrity: sha512-ufjkNVzbRHKcCOmTahZkmVsyc3W+MSk3jY03m+a7tGHkIsdVMG9l10/3HvFbWkkKzY5VFp3pkRsIo/UYgmFL7Q==}
@@ -3484,11 +3478,16 @@ packages:
     engines: {node: '>=14.17'}
     hasBin: true
 
-  typewriter-effect@2.22.0:
-    resolution: {integrity: sha512-01HCRYY462wT8Fxps/epwGCioZd/GMXY0aLKhFKrfJ5Xhgf54/SiDx7Oq7PoES5kGqOEAdW8FS8HYVM2WSvfhQ==}
+  typewriter-effect@3.3.0:
+    resolution: {integrity: sha512-4pHTt5WroYA92ZhOagEMAVFZwXVFn3qUIWMBAetSIhSCLLvqcDkfL13n3OqtbyiQFlI6iEeo9Ua/YrypU1PjjA==}
+    hasBin: true
     peerDependencies:
+      puppeteer: '>=22.0.0'
       react: '>=17.0.0'
       react-dom: '>=17.0.0'
+    peerDependenciesMeta:
+      puppeteer:
+        optional: true
 
   unbox-primitive@1.1.0:
     resolution: {integrity: sha512-nWJ91DjeOkej/TA8pXQ3myruKpKEYgqvpw9lz4OPHj/NWFNluYrjbz9j01CJ8yKQd2g4jFoOkINCTW2I5LEEyw==}
@@ -6641,8 +6640,6 @@ snapshots:
 
   perfect-debounce@2.1.0: {}
 
-  performance-now@2.1.0: {}
-
   picocolors@1.1.1: {}
 
   picomatch@2.3.2: {}
@@ -6714,10 +6711,6 @@ snapshots:
   pure-rand@6.1.0: {}
 
   queue-microtask@1.2.3: {}
-
-  raf@3.4.1:
-    dependencies:
-      performance-now: 2.1.0
 
   rc9@3.1.0:
     dependencies:
@@ -7198,10 +7191,8 @@ snapshots:
 
   typescript@6.0.3: {}
 
-  typewriter-effect@2.22.0(react-dom@19.3.1(react@19.3.1))(react@19.3.1):
+  typewriter-effect@3.3.0(react-dom@19.3.1(react@19.3.1))(react@19.3.1):
     dependencies:
-      prop-types: 15.8.1
-      raf: 3.4.1
       react: 19.3.1
       react-dom: 19.3.1(react@19.3.1)
 
