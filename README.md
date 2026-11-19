@@ -299,7 +299,7 @@ Useful resources and dependencies that are used in Genius.
 - [tailwind-merge](https://www.npmjs.com/package/tailwind-merge): ^3.7.0
 - [tailwindcss](https://www.npmjs.com/package/tailwindcss): ^4.3.4
 - [typescript](https://www.npmjs.com/package/typescript): ^6.0.3
-- [typewriter-effect](https://www.npmjs.com/package/typewriter-effect): ^2.22.0
+- [typewriter-effect](https://www.npmjs.com/package/typewriter-effect): ^3.3.0
 - [zod](https://www.npmjs.com/package/zod): ^4.6.7
 - [zustand](https://www.npmjs.com/package/zustand): ^5.0.11
 
