@@ -269,7 +269,7 @@ Useful resources and dependencies that are used in Genius.
 - [@radix-ui/react-avatar](https://www.npmjs.com/package/@radix-ui/react-avatar): ^1.3.1
 - [@radix-ui/react-dialog](https://www.npmjs.com/package/@radix-ui/react-dialog): ^1.3.1
 - [@radix-ui/react-label](https://www.npmjs.com/package/@radix-ui/react-label): ^2.1.17
-- [@radix-ui/react-progress](https://www.npmjs.com/package/@radix-ui/react-progress): ^1.1.8
+- [@radix-ui/react-progress](https://www.npmjs.com/package/@radix-ui/react-progress): ^1.2.1
 - [@radix-ui/react-select](https://www.npmjs.com/package/@radix-ui/react-select): ^2.4.1
 - [@radix-ui/react-separator](https://www.npmjs.com/package/@radix-ui/react-separator): ^1.2.0
 - [@radix-ui/react-slot](https://www.npmjs.com/package/@radix-ui/react-slot): ^1.5.0
@@ -283,7 +283,7 @@ Useful resources and dependencies that are used in Genius.
 - [crisp-sdk-web](https://www.npmjs.com/package/crisp-sdk-web): ^1.2.1
 - [dotenv](https://www.npmjs.com/package/dotenv): ^18.0.10
 - [eslint](https://www.npmjs.com/package/eslint): 9.39.5
-- [eslint-config-next](https://www.npmjs.com/package/eslint-config-next): 16.4.2
+- [eslint-config-next](https://www.npmjs.com/package/eslint-config-next): 16.4.6
 - [lucide-react](https://www.npmjs.com/package/lucide-react): ^1.62.0
 - [next](https://www.npmjs.com/package/next): 16.4.4
 - [openai](https://www.npmjs.com/package/openai): ^7.8.0
@@ -301,7 +301,7 @@ Useful resources and dependencies that are used in Genius.
 - [typescript](https://www.npmjs.com/package/typescript): ^6.0.3
 - [typewriter-effect](https://www.npmjs.com/package/typewriter-effect): ^3.3.0
 - [zod](https://www.npmjs.com/package/zod): ^4.6.7
-- [zustand](https://www.npmjs.com/package/zustand): ^5.0.11
+- [zustand](https://www.npmjs.com/package/zustand): ^5.1.0
 
 <!--- DEPENDENCIES_END --->
 
