@@ -40,7 +40,7 @@
     "sonner": "^2.0.7",
     "stripe": "^23.1.0",
     "tailwind-merge": "^3.7.0",
-    "typewriter-effect": "^2.22.0",
+    "typewriter-effect": "^3.3.0",
     "zod": "^4.6.7",
     "zustand": "^5.0.11"
   },
